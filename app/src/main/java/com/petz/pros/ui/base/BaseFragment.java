@@ -1,12 +1,12 @@
-package com.petz.cleancode.ui.base;
+package com.petz.pros.ui.base;
 
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 
-import com.petz.cleancode.di.component.ActivityComponent;
-import com.petz.cleancode.utils.CommonUtils;
+import com.petz.pros.di.component.ActivityComponent;
+import com.petz.pros.utils.CommonUtils;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;

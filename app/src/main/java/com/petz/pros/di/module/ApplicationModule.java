@@ -1,22 +1,22 @@
-package com.petz.cleancode.di.module;
+package com.petz.pros.di.module;
 
 import android.app.Application;
 import android.content.Context;
 
-import com.petz.cleancode.BuildConfig;
-import com.petz.cleancode.data.BaseDataManager;
-import com.petz.cleancode.data.DataManager;
-import com.petz.cleancode.data.db.AppDatabase;
-import com.petz.cleancode.data.network.NetworkService;
-import com.petz.cleancode.data.network.RestApiHelper;
-import com.petz.cleancode.data.network.RestApiManager;
-import com.petz.cleancode.data.prefs.PreferencesHelper;
-import com.petz.cleancode.data.prefs.PreferencesManager;
-import com.petz.cleancode.di.ApiInfo;
-import com.petz.cleancode.di.ApplicationContext;
-import com.petz.cleancode.di.DatabaseInfo;
-import com.petz.cleancode.di.PreferenceInfo;
-import com.petz.cleancode.root.AppConstant;
+import com.petz.pros.BuildConfig;
+import com.petz.pros.data.BaseDataManager;
+import com.petz.pros.data.DataManager;
+import com.petz.pros.data.db.AppDatabase;
+import com.petz.pros.data.network.NetworkService;
+import com.petz.pros.data.network.RestApiHelper;
+import com.petz.pros.data.network.RestApiManager;
+import com.petz.pros.data.prefs.PreferencesHelper;
+import com.petz.pros.data.prefs.PreferencesManager;
+import com.petz.pros.di.ApiInfo;
+import com.petz.pros.di.ApplicationContext;
+import com.petz.pros.di.DatabaseInfo;
+import com.petz.pros.di.PreferenceInfo;
+import com.petz.pros.root.AppConstant;
 
 import javax.inject.Singleton;
 

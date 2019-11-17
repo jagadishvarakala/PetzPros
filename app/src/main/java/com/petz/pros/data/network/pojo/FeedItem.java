@@ -1,5 +1,5 @@
 
-package com.petz.cleancode.data.network.pojo;
+package com.petz.pros.data.network.pojo;
 
 
 import com.google.gson.annotations.SerializedName;

@@ -1,4 +1,4 @@
-package com.petz.cleancode.ui.base;
+package com.petz.pros.ui.base;
 
 import android.annotation.TargetApi;
 import android.app.ProgressDialog;
@@ -12,13 +12,13 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.petz.cleancode.R;
-import com.petz.cleancode.di.component.ActivityComponent;
-import com.petz.cleancode.di.component.DaggerActivityComponent;
-import com.petz.cleancode.di.module.ActivityModule;
-import com.petz.cleancode.root.WaveApp;
-import com.petz.cleancode.utils.CommonUtils;
-import com.petz.cleancode.utils.NetworkUtils;
+import com.petz.pros.R;
+import com.petz.pros.di.component.ActivityComponent;
+import com.petz.pros.di.component.DaggerActivityComponent;
+import com.petz.pros.di.module.ActivityModule;
+import com.petz.pros.root.WaveApp;
+import com.petz.pros.utils.CommonUtils;
+import com.petz.pros.utils.NetworkUtils;
 import com.google.android.material.snackbar.Snackbar;
 
 import androidx.annotation.Nullable;

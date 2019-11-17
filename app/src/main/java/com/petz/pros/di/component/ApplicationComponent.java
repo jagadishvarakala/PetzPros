@@ -1,12 +1,12 @@
-package com.petz.cleancode.di.component;
+package com.petz.pros.di.component;
 
 import android.app.Application;
 import android.content.Context;
 
-import com.petz.cleancode.data.DataManager;
-import com.petz.cleancode.di.ApplicationContext;
-import com.petz.cleancode.di.module.ApplicationModule;
-import com.petz.cleancode.root.WaveApp;
+import com.petz.pros.data.DataManager;
+import com.petz.pros.di.ApplicationContext;
+import com.petz.pros.di.module.ApplicationModule;
+import com.petz.pros.root.WaveApp;
 
 import javax.inject.Singleton;
 

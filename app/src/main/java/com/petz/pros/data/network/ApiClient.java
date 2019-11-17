@@ -1,4 +1,4 @@
-package com.petz.cleancode.data.network;
+package com.petz.pros.data.network;
 
 import java.util.concurrent.TimeUnit;
 

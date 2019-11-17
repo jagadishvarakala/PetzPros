@@ -18,7 +18,7 @@
         android:layout_marginBottom="8dp"
         android:gravity="center"
         android:text="@string/empty_screen"
-        android:textColor="@color/design_default_color_on_secondary"
+        android:textColor="@color/accent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

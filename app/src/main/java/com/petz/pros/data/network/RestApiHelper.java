@@ -1,9 +1,9 @@
-package com.petz.cleancode.data.network;
+package com.petz.pros.data.network;
 
-import com.petz.cleancode.data.network.pojo.FeedItem;
-import com.petz.cleancode.data.network.pojo.LoginRequest;
-import com.petz.cleancode.data.network.pojo.UserProfile;
-import com.petz.cleancode.data.network.pojo.WrapperResponse;
+import com.petz.pros.data.network.pojo.FeedItem;
+import com.petz.pros.data.network.pojo.LoginRequest;
+import com.petz.pros.data.network.pojo.UserProfile;
+import com.petz.pros.data.network.pojo.WrapperResponse;
 
 import java.util.List;
 

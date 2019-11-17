@@ -1,4 +1,4 @@
-package com.petz.cleancode.data.network;
+package com.petz.pros.data.network;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

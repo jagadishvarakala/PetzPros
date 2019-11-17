@@ -1,15 +1,15 @@
-package com.petz.cleancode.ui.login;
+package com.petz.pros.ui.login;
 
 import android.os.Bundle;
 import android.view.View;
 
 import androidx.databinding.DataBindingUtil;
 
-import com.petz.cleancode.R;
-import com.petz.cleancode.databinding.ActivityLoginBinding;
-import com.petz.cleancode.ui.base.BaseActivity;
-import com.petz.cleancode.ui.main.MainActivity;
-import com.petz.cleancode.ui.registration.OwnerRegistrationActivity;
+import com.petz.pros.R;
+import com.petz.pros.databinding.ActivityLoginBinding;
+import com.petz.pros.ui.base.BaseActivity;
+import com.petz.pros.ui.main.MainActivity;
+import com.petz.pros.ui.registration.OwnerRegistrationActivity;
 
 import javax.inject.Inject;
 

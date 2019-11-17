@@ -1,7 +1,7 @@
-package com.petz.cleancode.data.network;
+package com.petz.pros.data.network;
 
 
-import com.petz.cleancode.data.network.pojo.LoginRequest;
+import com.petz.pros.data.network.pojo.LoginRequest;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;

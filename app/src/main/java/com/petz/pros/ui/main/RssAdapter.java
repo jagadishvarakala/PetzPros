@@ -1,4 +1,4 @@
-package com.petz.cleancode.ui.main;
+package com.petz.pros.ui.main;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -9,9 +9,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.petz.cleancode.R;
-import com.petz.cleancode.data.network.pojo.FeedItem;
-import com.petz.cleancode.ui.base.BaseViewHolder;
+import com.petz.pros.R;
+import com.petz.pros.data.network.pojo.FeedItem;
+import com.petz.pros.ui.base.BaseViewHolder;
 import com.bumptech.glide.Glide;
 
 import java.util.List;

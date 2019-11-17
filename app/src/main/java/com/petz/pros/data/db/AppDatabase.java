@@ -1,9 +1,9 @@
-package com.petz.cleancode.data.db;
+package com.petz.pros.data.db;
 
 import android.content.Context;
 
-import com.petz.cleancode.data.db.dao.UserDao;
-import com.petz.cleancode.data.db.model.User;
+import com.petz.pros.data.db.dao.UserDao;
+import com.petz.pros.data.db.model.User;
 
 import androidx.room.Database;
 import androidx.room.Room;

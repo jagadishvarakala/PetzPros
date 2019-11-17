@@ -1,7 +1,7 @@
-package com.petz.cleancode.ui.main;
+package com.petz.pros.ui.main;
 
-import com.petz.cleancode.data.network.pojo.FeedItem;
-import com.petz.cleancode.ui.base.MvpView;
+import com.petz.pros.data.network.pojo.FeedItem;
+import com.petz.pros.ui.base.MvpView;
 
 import java.util.List;
 

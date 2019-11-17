@@ -1,4 +1,4 @@
-package com.petz.cleancode.utils.rx;
+package com.petz.pros.utils.rx;
 
 import io.reactivex.Scheduler;
 import io.reactivex.android.schedulers.AndroidSchedulers;

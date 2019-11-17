@@ -1,4 +1,4 @@
-package com.petz.cleancode.utils;
+package com.petz.pros.utils;
 
 import android.graphics.Canvas;
 import android.graphics.Rect;

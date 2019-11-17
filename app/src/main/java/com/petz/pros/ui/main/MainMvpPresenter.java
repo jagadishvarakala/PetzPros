@@ -1,6 +1,6 @@
-package com.petz.cleancode.ui.main;
+package com.petz.pros.ui.main;
 
-import com.petz.cleancode.ui.base.MvpPresenter;
+import com.petz.pros.ui.base.MvpPresenter;
 
 /**
  * Created on : Feb 11, 2019

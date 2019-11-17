@@ -1,17 +1,17 @@
-package com.petz.cleancode.data;
+package com.petz.pros.data;
 
 import android.content.Context;
 
-import com.petz.cleancode.data.db.AppDatabase;
-import com.petz.cleancode.data.db.model.User;
-import com.petz.cleancode.data.network.RestApiHelper;
-import com.petz.cleancode.data.network.pojo.FeedItem;
-import com.petz.cleancode.data.network.pojo.LoginRequest;
-import com.petz.cleancode.data.network.pojo.UserProfile;
-import com.petz.cleancode.data.network.pojo.WrapperResponse;
-import com.petz.cleancode.data.prefs.PreferencesHelper;
-import com.petz.cleancode.data.utils.LoggedInMode;
-import com.petz.cleancode.di.ApplicationContext;
+import com.petz.pros.data.db.AppDatabase;
+import com.petz.pros.data.db.model.User;
+import com.petz.pros.data.network.RestApiHelper;
+import com.petz.pros.data.network.pojo.FeedItem;
+import com.petz.pros.data.network.pojo.LoginRequest;
+import com.petz.pros.data.network.pojo.UserProfile;
+import com.petz.pros.data.network.pojo.WrapperResponse;
+import com.petz.pros.data.prefs.PreferencesHelper;
+import com.petz.pros.data.utils.LoggedInMode;
+import com.petz.pros.di.ApplicationContext;
 
 import java.util.List;
 

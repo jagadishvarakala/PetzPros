@@ -1,4 +1,4 @@
-package com.petz.cleancode.ui.base;
+package com.petz.pros.ui.base;
 
 import android.view.View;
 

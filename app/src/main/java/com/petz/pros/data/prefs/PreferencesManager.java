@@ -1,12 +1,12 @@
-package com.petz.cleancode.data.prefs;
+package com.petz.pros.data.prefs;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import com.petz.cleancode.data.utils.LoggedInMode;
-import com.petz.cleancode.di.ApplicationContext;
-import com.petz.cleancode.di.PreferenceInfo;
-import com.petz.cleancode.root.AppConstant;
+import com.petz.pros.data.utils.LoggedInMode;
+import com.petz.pros.di.ApplicationContext;
+import com.petz.pros.di.PreferenceInfo;
+import com.petz.pros.root.AppConstant;
 
 import javax.inject.Inject;
 

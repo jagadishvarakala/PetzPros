@@ -1,10 +1,10 @@
-package com.petz.cleancode.root;
+package com.petz.pros.root;
 
 import android.app.Application;
 
-import com.petz.cleancode.di.component.ApplicationComponent;
-import com.petz.cleancode.di.component.DaggerApplicationComponent;
-import com.petz.cleancode.di.module.ApplicationModule;
+import com.petz.pros.di.component.ApplicationComponent;
+import com.petz.pros.di.component.DaggerApplicationComponent;
+import com.petz.pros.di.module.ApplicationModule;
 
 /**
  * Created on : Jan 19, 2019

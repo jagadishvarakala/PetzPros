@@ -1,8 +1,8 @@
-package com.petz.cleancode.ui.base;
+package com.petz.pros.ui.base;
 
-import com.petz.cleancode.data.DataManager;
-import com.petz.cleancode.data.network.WrapperError;
-import com.petz.cleancode.utils.rx.SchedulerProvider;
+import com.petz.pros.data.DataManager;
+import com.petz.pros.data.network.WrapperError;
+import com.petz.pros.utils.rx.SchedulerProvider;
 import com.google.gson.JsonSyntaxException;
 
 import javax.inject.Inject;

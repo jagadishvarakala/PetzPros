@@ -1,4 +1,4 @@
-package com.petz.cleancode.ui.registration;
+package com.petz.pros.ui.registration;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,11 +11,11 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-import com.petz.cleancode.R;
-import com.petz.cleancode.databinding.ActivityOwnerRegistrationBinding;
-import com.petz.cleancode.ui.base.BaseActivity;
-import com.petz.cleancode.ui.registration.addressdetails.AddressDetailsFragment;
-import com.petz.cleancode.ui.registration.personaldetails.PersonalDetailsFragment;
+import com.petz.pros.R;
+import com.petz.pros.databinding.ActivityOwnerRegistrationBinding;
+import com.petz.pros.ui.base.BaseActivity;
+import com.petz.pros.ui.registration.addressdetails.AddressDetailsFragment;
+import com.petz.pros.ui.registration.personaldetails.PersonalDetailsFragment;
 import com.shuhart.stepview.StepView;
 
 import java.util.ArrayList;

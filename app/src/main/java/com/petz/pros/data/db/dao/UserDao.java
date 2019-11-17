@@ -1,6 +1,6 @@
-package com.petz.cleancode.data.db.dao;
+package com.petz.pros.data.db.dao;
 
-import com.petz.cleancode.data.db.model.User;
+import com.petz.pros.data.db.model.User;
 
 import java.util.List;
 

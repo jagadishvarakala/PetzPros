@@ -1,4 +1,4 @@
-package com.petz.cleancode.ui.main;
+package com.petz.pros.ui.main;
 
 import android.content.Context;
 import android.content.Intent;
@@ -7,10 +7,10 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.petz.cleancode.R;
-import com.petz.cleancode.data.network.pojo.FeedItem;
-import com.petz.cleancode.ui.base.BaseActivity;
-import com.petz.cleancode.utils.DividerItemDecoration;
+import com.petz.pros.R;
+import com.petz.pros.data.network.pojo.FeedItem;
+import com.petz.pros.ui.base.BaseActivity;
+import com.petz.pros.utils.DividerItemDecoration;
 
 import java.util.List;
 

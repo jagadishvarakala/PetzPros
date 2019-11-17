@@ -1,4 +1,4 @@
-package com.petz.cleancode;
+package com.petz.pros;
 
 import org.junit.Test;
 

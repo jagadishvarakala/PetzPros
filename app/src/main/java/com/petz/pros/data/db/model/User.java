@@ -1,6 +1,6 @@
-package com.petz.cleancode.data.db.model;
+package com.petz.pros.data.db.model;
 
-import com.petz.cleancode.data.utils.DateConverter;
+import com.petz.pros.data.utils.DateConverter;
 
 import java.util.Date;
 

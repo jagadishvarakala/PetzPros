@@ -1,11 +1,11 @@
-package com.petz.cleancode.utils;
+package com.petz.pros.utils;
 
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 
-import com.petz.cleancode.R;
+import com.petz.pros.R;
 
 
 /**

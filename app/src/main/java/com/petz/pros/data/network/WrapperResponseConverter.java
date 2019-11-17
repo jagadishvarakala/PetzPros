@@ -1,6 +1,6 @@
-package com.petz.cleancode.data.network;
+package com.petz.pros.data.network;
 
-import com.petz.cleancode.data.network.pojo.WrapperResponse;
+import com.petz.pros.data.network.pojo.WrapperResponse;
 
 import java.io.IOException;
 

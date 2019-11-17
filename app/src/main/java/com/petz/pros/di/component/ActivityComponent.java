@@ -1,12 +1,12 @@
-package com.petz.cleancode.di.component;
+package com.petz.pros.di.component;
 
 
-import com.petz.cleancode.di.PerActivity;
-import com.petz.cleancode.di.module.ActivityModule;
-import com.petz.cleancode.ui.login.LoginActivity;
-import com.petz.cleancode.ui.main.MainActivity;
-import com.petz.cleancode.ui.registration.OwnerRegistrationActivity;
-import com.petz.cleancode.ui.usertype.UserTypeActivity;
+import com.petz.pros.di.PerActivity;
+import com.petz.pros.di.module.ActivityModule;
+import com.petz.pros.ui.login.LoginActivity;
+import com.petz.pros.ui.main.MainActivity;
+import com.petz.pros.ui.registration.OwnerRegistrationActivity;
+import com.petz.pros.ui.usertype.UserTypeActivity;
 
 import dagger.Component;
 

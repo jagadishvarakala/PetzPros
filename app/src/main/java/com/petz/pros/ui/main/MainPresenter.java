@@ -1,8 +1,8 @@
-package com.petz.cleancode.ui.main;
+package com.petz.pros.ui.main;
 
-import com.petz.cleancode.data.DataManager;
-import com.petz.cleancode.ui.base.BasePresenter;
-import com.petz.cleancode.utils.rx.SchedulerProvider;
+import com.petz.pros.data.DataManager;
+import com.petz.pros.ui.base.BasePresenter;
+import com.petz.pros.utils.rx.SchedulerProvider;
 
 import javax.inject.Inject;
 

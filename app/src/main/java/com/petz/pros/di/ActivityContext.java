@@ -1,4 +1,4 @@
-package com.petz.cleancode.di;
+package com.petz.pros.di;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

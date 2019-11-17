@@ -1,18 +1,18 @@
-package com.petz.cleancode.di.module;
+package com.petz.pros.di.module;
 
 import android.content.Context;
 
-import com.petz.cleancode.di.ActivityContext;
-import com.petz.cleancode.di.PerActivity;
-import com.petz.cleancode.ui.login.LoginMvpPresenter;
-import com.petz.cleancode.ui.login.LoginMvpView;
-import com.petz.cleancode.ui.login.LoginPresenter;
-import com.petz.cleancode.ui.main.MainMvpPresenter;
-import com.petz.cleancode.ui.main.MainMvpView;
-import com.petz.cleancode.ui.main.MainPresenter;
-import com.petz.cleancode.ui.main.RssAdapter;
-import com.petz.cleancode.utils.rx.AppSchedulerProvider;
-import com.petz.cleancode.utils.rx.SchedulerProvider;
+import com.petz.pros.di.ActivityContext;
+import com.petz.pros.di.PerActivity;
+import com.petz.pros.ui.login.LoginMvpPresenter;
+import com.petz.pros.ui.login.LoginMvpView;
+import com.petz.pros.ui.login.LoginPresenter;
+import com.petz.pros.ui.main.MainMvpPresenter;
+import com.petz.pros.ui.main.MainMvpView;
+import com.petz.pros.ui.main.MainPresenter;
+import com.petz.pros.ui.main.RssAdapter;
+import com.petz.pros.utils.rx.AppSchedulerProvider;
+import com.petz.pros.utils.rx.SchedulerProvider;
 
 import java.util.ArrayList;
 

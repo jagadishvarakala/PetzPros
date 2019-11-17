@@ -1,8 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#E43F3F</color>
-    <color name="colorPrimaryDark">#E12929</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">#37BC9B</color>
+    <color name="colorPrimaryDark">#37BC9B</color>
+    <color name="colorAccent">#37BC9B</color>
+    <color name="cardview_light_background">#d3d3d3</color>
+
+
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorLightGreen">#37BC9B</color>
+    <color name="color_light_yellow">#f0ad4e</color>
+
+    <color name="grey_3">#f7f7f7</color>
+    <color name="grey_5">#f2f2f2</color>
+    <color name="grey_10">#e6e6e6</color>
+    <color name="grey_20">#cccccc</color>
+    <color name="grey_40">#999999</color>
+    <color name="grey_60">#666666</color>
+    <color name="grey_80">#37474F</color>
+    <color name="grey_90">#263238</color>
+
     <color name="black_effective">#2a2a2a</color>
     <color name="colorPrimaryDarker">#CC1D1D</color>
     <color name="accent">#FFFFFF</color>

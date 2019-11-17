@@ -1,9 +1,9 @@
-package com.petz.cleancode.data;
+package com.petz.pros.data;
 
-import com.petz.cleancode.data.db.dao.UserDao;
-import com.petz.cleancode.data.network.RestApiHelper;
-import com.petz.cleancode.data.prefs.PreferencesHelper;
-import com.petz.cleancode.data.utils.LoggedInMode;
+import com.petz.pros.data.db.dao.UserDao;
+import com.petz.pros.data.network.RestApiHelper;
+import com.petz.pros.data.prefs.PreferencesHelper;
+import com.petz.pros.data.utils.LoggedInMode;
 
 public interface DataManager extends UserDao, PreferencesHelper, RestApiHelper {
     void updateApiHeader(Long userId, String accessToken);

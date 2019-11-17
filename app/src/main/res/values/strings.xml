@@ -19,4 +19,43 @@
     <string name="empty_screen">We do not have anything\nhere right now. Please Retry</string>
     <string name="btn_retry">Retry</string>
     <string name="title_home">Home</string>
+
+
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="care_tacker">PET CARE TAKER</string>
+    <string name="user_login">PET OWNER</string>
+    <string name="forgot_password">Forgot your password ?</string>
+    <string name="already_have_an_account"><font color = '#555555'> New user? </font> <font color='#37BC9B'>Sign Up here</font></string>
+
+    <!-- Registration page -->
+    <string name="hint_first_name">Enter First Name</string>
+    <string name="hint_last_name">Enter Last Name</string>
+    <string name="hint_password">Enter Password</string>
+    <string name="hint_confirm_password">Enter Confirm Password</string>
+    <string name="hint_email">Enter Email</string>
+    <string name="hint_phone">Enter Phone</string>
+    <string name="hint_address">Enter Address</string>
+    <string name="hint_city">Enter City</string>
+    <string name="hint_state">Enter State</string>
+    <string name="hint_country">Enter Country</string>
+    <string name="hint_zipcode">Enter Zipcode</string>
+
+    <string name="title_pet_owner_reg">PET OWNER REGISTRATION</string>
+    <string name="title_pet_care_reg">PET CARE TAKER REGISTRATION</string>
+
+    <string name="label_dog_walking">Dog Walking</string>
+    <string name="label_dog_boarding">Dog Boarding</string>
+    <string name="label_dog_sitting">Dog Sitting</string>
+    <string name="label_dog_day_care">Dog Day care</string>
+    <string name="label_cat_doarding">Cat Boarding</string>
+    <string name="label_cat_sitting">Cat Sitting</string>
+    <string name="label_drop_visits">Drop in Visits</string>
+    <string name="hint_charge_per_hour">Charge Per Hour($)*</string>
+
+    <string name="hint_account_number">Account Number</string>
+    <string name="hint_bank_name">Bank Name</string>
+    <string name="hint_bank_branch">Branch</string>
+    <string name="hint_ifsc_code">IFSC code</string>
 </resources>

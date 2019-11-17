@@ -1,4 +1,4 @@
-package com.petz.cleancode.data.utils;
+package com.petz.pros.data.utils;
 
 import java.util.Date;
 

@@ -1,4 +1,4 @@
-package com.petz.cleancode.utils;
+package com.petz.pros.utils;
 
 import android.content.Context;
 import android.util.AttributeSet;

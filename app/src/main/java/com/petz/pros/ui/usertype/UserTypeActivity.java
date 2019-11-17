@@ -1,4 +1,4 @@
-package com.petz.cleancode.ui.usertype;
+package com.petz.pros.ui.usertype;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,10 +6,10 @@ import android.view.View;
 
 import androidx.databinding.DataBindingUtil;
 
-import com.petz.cleancode.R;
-import com.petz.cleancode.databinding.ActivityUserTypeBinding;
-import com.petz.cleancode.ui.base.BaseActivity;
-import com.petz.cleancode.ui.login.LoginActivity;
+import com.petz.pros.R;
+import com.petz.pros.databinding.ActivityUserTypeBinding;
+import com.petz.pros.ui.base.BaseActivity;
+import com.petz.pros.ui.login.LoginActivity;
 
 import javax.inject.Inject;
 
