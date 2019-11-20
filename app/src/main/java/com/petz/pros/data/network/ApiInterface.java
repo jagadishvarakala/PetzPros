@@ -2,6 +2,7 @@ package com.petz.pros.data.network;
 
 
 import com.petz.pros.data.network.pojo.LoginRequest;
+import com.petz.pros.data.network.pojo.RegistrationRequest;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -27,6 +28,9 @@ public interface ApiInterface {
 
     @POST("login")
     public Call<ResponseBody> userLogin(@Body LoginRequest loginRequest);
+
+    @POST("register")
+    public Call<ResponseBody> petOwnerRegistration(@Body RegistrationRequest request);
 
 
     @FormUrlEncoded

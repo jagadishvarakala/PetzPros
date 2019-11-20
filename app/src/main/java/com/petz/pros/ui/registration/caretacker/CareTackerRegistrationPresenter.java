@@ -1,4 +1,4 @@
-package com.petz.pros.ui.registration;
+package com.petz.pros.ui.registration.caretacker;
 
 import androidx.annotation.NonNull;
 
@@ -7,6 +7,8 @@ import com.petz.pros.data.network.ApiClient;
 import com.petz.pros.data.network.ApiInterface;
 import com.petz.pros.data.network.pojo.RegistrationRequest;
 import com.petz.pros.ui.base.BasePresenter;
+import com.petz.pros.ui.registration.OwnerRegistrationMvpPresenter;
+import com.petz.pros.ui.registration.OwnerRegistrationMvpView;
 import com.petz.pros.utils.rx.SchedulerProvider;
 
 import javax.inject.Inject;
@@ -17,10 +19,10 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class OwnerRegistrationPresenter<V extends OwnerRegistrationMvpView> extends BasePresenter<V>
+public class CareTackerRegistrationPresenter<V extends OwnerRegistrationMvpView> extends BasePresenter<V>
         implements OwnerRegistrationMvpPresenter<V> {
     @Inject
-    public OwnerRegistrationPresenter(DataManager manager, SchedulerProvider schedulerProvider, CompositeDisposable compositeDisposable) {
+    public CareTackerRegistrationPresenter(DataManager manager, SchedulerProvider schedulerProvider, CompositeDisposable compositeDisposable) {
         super(manager, schedulerProvider, compositeDisposable);
     }
 

@@ -1,4 +1,4 @@
-package com.petz.pros.ui.registration;
+package com.petz.pros.ui.registration.caretacker;
 
 import android.content.Context;
 import android.content.Intent;
@@ -16,6 +16,8 @@ import com.petz.pros.R;
 import com.petz.pros.data.network.pojo.RegistrationRequest;
 import com.petz.pros.databinding.ActivityOwnerRegistrationBinding;
 import com.petz.pros.ui.base.BaseActivity;
+import com.petz.pros.ui.registration.OwnerRegistrationMvpView;
+import com.petz.pros.ui.registration.OwnerRegistrationPresenter;
 import com.petz.pros.ui.registration.addressdetails.AddressDetailsFragment;
 import com.petz.pros.ui.registration.personaldetails.PersonalDetailsFragment;
 import com.shuhart.stepview.StepView;
@@ -26,7 +28,7 @@ import javax.inject.Inject;
 
 import okhttp3.ResponseBody;
 
-public class OwnerRegistrationActivity extends BaseActivity implements OwnerRegistrationMvpView{
+public class CareTackerRegistrationActivity extends BaseActivity implements OwnerRegistrationMvpView{
 
     @Inject
     OwnerRegistrationPresenter<OwnerRegistrationMvpView> registrationMvpPresenter;
@@ -35,7 +37,7 @@ public class OwnerRegistrationActivity extends BaseActivity implements OwnerRegi
     public RegistrationRequest registrationRequest;
 
     public static Intent getStartIntent(Context context) {
-        Intent intent = new Intent(context, OwnerRegistrationActivity.class);
+        Intent intent = new Intent(context, CareTackerRegistrationActivity.class);
         return intent;
     }
 
@@ -44,7 +46,7 @@ public class OwnerRegistrationActivity extends BaseActivity implements OwnerRegi
         super.onCreate(savedInstanceState);
         ownerRegistrationBinding = DataBindingUtil.setContentView(this, R.layout.activity_owner_registration);
         getActivityComponent().inject(this);
-        registrationMvpPresenter.onAttach(OwnerRegistrationActivity.this);
+        registrationMvpPresenter.onAttach(CareTackerRegistrationActivity.this);
         registrationRequest = new RegistrationRequest();
         setUp();
     }
@@ -65,7 +67,7 @@ public class OwnerRegistrationActivity extends BaseActivity implements OwnerRegi
                 }})
                 // You should specify only steps number or steps array of strings.
                 // In case you specify both steps array is chosen.
-                .stepsNumber(2)
+                .stepsNumber(5)
                 .animationDuration(getResources().getInteger(android.R.integer.config_shortAnimTime))
                 .stepLineWidth(getResources().getDimensionPixelSize(R.dimen.dp1))
                 .textSize(getResources().getDimensionPixelSize(R.dimen.sp14))

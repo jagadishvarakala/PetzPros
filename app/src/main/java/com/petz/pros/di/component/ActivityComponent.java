@@ -6,6 +6,7 @@ import com.petz.pros.di.module.ActivityModule;
 import com.petz.pros.ui.login.LoginActivity;
 import com.petz.pros.ui.main.MainActivity;
 import com.petz.pros.ui.registration.OwnerRegistrationActivity;
+import com.petz.pros.ui.registration.caretacker.CareTackerRegistrationActivity;
 import com.petz.pros.ui.usertype.UserTypeActivity;
 
 import dagger.Component;
@@ -27,5 +28,7 @@ public interface ActivityComponent {
     void inject(UserTypeActivity userTypeActivity);
 
     void inject(OwnerRegistrationActivity ownerRegistrationActivity);
+
+    void inject(CareTackerRegistrationActivity careTackerRegistrationActivity);
 
 }
