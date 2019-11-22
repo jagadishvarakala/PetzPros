@@ -156,6 +156,7 @@
             app:layout_constraintStart_toStartOf="parent"
             android:gravity="center_horizontal">
             <TextView
+                android:id="@+id/link_forgot_password"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"

@@ -3,8 +3,11 @@ package com.petz.pros.di.component;
 
 import com.petz.pros.di.PerActivity;
 import com.petz.pros.di.module.ActivityModule;
+import com.petz.pros.ui.forgotpassword.ForgotPasswordActivity;
 import com.petz.pros.ui.login.LoginActivity;
 import com.petz.pros.ui.main.MainActivity;
+import com.petz.pros.ui.main.NavigationActivity;
+import com.petz.pros.ui.main.ui.home.HomeFragment;
 import com.petz.pros.ui.registration.OwnerRegistrationActivity;
 import com.petz.pros.ui.registration.caretacker.CareTackerRegistrationActivity;
 import com.petz.pros.ui.usertype.UserTypeActivity;
@@ -31,4 +34,9 @@ public interface ActivityComponent {
 
     void inject(CareTackerRegistrationActivity careTackerRegistrationActivity);
 
+    void inject(ForgotPasswordActivity forgotPasswordActivity);
+
+    void inject(NavigationActivity navigationActivity);
+
+    void inject(HomeFragment homeFragment);
 }

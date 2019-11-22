@@ -36,8 +36,9 @@ public class CareTackerRegistrationActivity extends BaseActivity implements Owne
     private ActivityOwnerRegistrationBinding ownerRegistrationBinding;
     public RegistrationRequest registrationRequest;
 
-    public static Intent getStartIntent(Context context) {
+    public static Intent getStartIntent(Context context, int userType) {
         Intent intent = new Intent(context, CareTackerRegistrationActivity.class);
+        intent.putExtra("userType",userType);
         return intent;
     }
 
@@ -48,6 +49,7 @@ public class CareTackerRegistrationActivity extends BaseActivity implements Owne
         getActivityComponent().inject(this);
         registrationMvpPresenter.onAttach(CareTackerRegistrationActivity.this);
         registrationRequest = new RegistrationRequest();
+        registrationRequest.setUserType(getIntent().getIntExtra("userType",0) == 1 ? "pet owner":"pet caretaker");
         setUp();
     }
 

@@ -34,8 +34,9 @@ public class OwnerRegistrationActivity extends BaseActivity implements OwnerRegi
     private ActivityOwnerRegistrationBinding ownerRegistrationBinding;
     public RegistrationRequest registrationRequest;
 
-    public static Intent getStartIntent(Context context) {
+    public static Intent getStartIntent(Context context, int userType) {
         Intent intent = new Intent(context, OwnerRegistrationActivity.class);
+        intent.putExtra("userType",userType);
         return intent;
     }
 
@@ -46,6 +47,7 @@ public class OwnerRegistrationActivity extends BaseActivity implements OwnerRegi
         getActivityComponent().inject(this);
         registrationMvpPresenter.onAttach(OwnerRegistrationActivity.this);
         registrationRequest = new RegistrationRequest();
+        registrationRequest.setUserType(getIntent().getIntExtra("userType",0) == 1 ? "pet owner":"pet caretaker");
         setUp();
     }
 

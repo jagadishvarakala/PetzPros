@@ -32,6 +32,9 @@ public interface ApiInterface {
     @POST("register")
     public Call<ResponseBody> petOwnerRegistration(@Body RegistrationRequest request);
 
+    @POST("ForgotPassword")
+    public Call<ResponseBody> petOwnerForgotPassword(@Body LoginRequest request);
+
 
     @FormUrlEncoded
     @POST("updateUser.php")

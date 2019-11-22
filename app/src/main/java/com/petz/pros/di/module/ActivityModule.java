@@ -11,6 +11,9 @@ import com.petz.pros.ui.main.MainMvpPresenter;
 import com.petz.pros.ui.main.MainMvpView;
 import com.petz.pros.ui.main.MainPresenter;
 import com.petz.pros.ui.main.RssAdapter;
+import com.petz.pros.ui.main.ui.home.HomeMvpPresenter;
+import com.petz.pros.ui.main.ui.home.HomeMvpView;
+import com.petz.pros.ui.main.ui.home.HomePresenter;
 import com.petz.pros.utils.rx.AppSchedulerProvider;
 import com.petz.pros.utils.rx.SchedulerProvider;
 
@@ -71,7 +74,10 @@ public class ActivityModule {
         return presenter;
     }
 
-
+    @Provides
+    HomeMvpPresenter<HomeMvpView> provideHomePresenter(HomePresenter<HomeMvpView> presenter) {
+        return presenter;
+    }
     @Provides
     RssAdapter provideRssAdapter() {
         return new RssAdapter(new ArrayList<>());
