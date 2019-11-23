@@ -3,6 +3,7 @@ package com.petz.pros.ui.registration;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
@@ -47,7 +48,7 @@ public class OwnerRegistrationActivity extends BaseActivity implements OwnerRegi
     protected void setUp() {
         ownerRegistrationBinding.stepView.getState()
                 .selectedTextColor(ContextCompat.getColor(this, R.color.colorAccent))
-                .animationType(StepView.ANIMATION_CIRCLE)
+                .animationType(StepView.ANIMATION_ALL)
                 .selectedCircleColor(ContextCompat.getColor(this, R.color.colorAccent))
                 .selectedCircleRadius(getResources().getDimensionPixelSize(R.dimen.dp14))
                 .selectedStepNumberColor(ContextCompat.getColor(this, R.color.colorWhite))
@@ -68,6 +69,13 @@ public class OwnerRegistrationActivity extends BaseActivity implements OwnerRegi
                 // other state methods are equal to the corresponding xml attributes
                 .commit();
 
+        ownerRegistrationBinding.btnNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ownerRegistrationBinding.stepView.go(1,true);
+                ownerRegistrationBinding.viewpager.setCurrentItem(1);
+            }
+        });
         ownerRegistrationBinding.viewpager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
     }
 

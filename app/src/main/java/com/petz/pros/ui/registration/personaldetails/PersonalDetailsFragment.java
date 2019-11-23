@@ -6,20 +6,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 
 import com.petz.pros.R;
+import com.petz.pros.databinding.FragmentPersonalDetailsBinding;
 
 public class PersonalDetailsFragment extends Fragment {
 
+    private FragmentPersonalDetailsBinding personalDetailsBinding;
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_personal_details, container, false);
-
-        TextView tv = (TextView) v.findViewById(R.id.tvFragFirst);
-        tv.setText(getArguments().getString("msg"));
-
-        return v;
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        personalDetailsBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_personal_details, container, false);
+        return personalDetailsBinding.getRoot();
     }
 
     public static PersonalDetailsFragment newInstance(String text) {
@@ -31,5 +31,8 @@ public class PersonalDetailsFragment extends Fragment {
         f.setArguments(b);
 
         return f;
+    }
+
+    private void loadView(){
     }
 }
