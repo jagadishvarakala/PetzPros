@@ -4,6 +4,7 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="_8dp">8dp</dimen>
+    <dimen name="_10dp">10dp</dimen>
     <dimen name="_4dp">4dp</dimen>
 
     <!--genaral spacing-->
@@ -26,4 +27,10 @@
     <dimen name="dp14">14dp</dimen>
     <dimen name="sp14">14sp</dimen>
     <dimen name="sp16">16sp</dimen>
+    <dimen name="sp18">18sp</dimen>
+    <dimen name="sp21">21sp</dimen>
+    <dimen name="nav_header_vertical_spacing">8dp</dimen>
+    <dimen name="nav_header_height">165dp</dimen>
+
+    <dimen name="card_padding">60dp</dimen>
 </resources>

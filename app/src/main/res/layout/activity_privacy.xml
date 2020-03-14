@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+
+    <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_margin="@dimen/_10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="The privacy policy of PetzPros describes how we collect and use your personal information to deliver our pet care services. Since we take the protection of your privacy very seriously you can feel secure. We make use of the personal information based on the service you have requested from us. Kindly read the following information to learn more about our Privacy Policy."
+                android:textColor="@color/grey_60"
+                android:textSize="@dimen/sp16" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="When PetzPros Will Change The Privacy Policy?"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp14"
+                android:layout_marginTop="@dimen/_10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="The privacy policy of PetzPros changes constantly to enhance our pet service. However, we will make an alert or send notification about the change of Privacy Policy. When you use our Pet care service after changing Privacy Policy means that you are accepted to all changes. So, read the Privacy Policy once you receive the notification."
+                android:textColor="@color/grey_60"
+                android:textSize="@dimen/sp16"
+                android:layout_marginTop="5dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="How Do We Gather Information From You?"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp14"
+                android:layout_marginTop="@dimen/_10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="We PetzPros collect information about you when you visit our websites, mobile applications and any product or services that are related to us. In addition to this, we gather information when you contact us to know about our pet care services."
+                android:textColor="@color/grey_60"
+                android:textSize="@dimen/sp16"
+                android:layout_marginTop="5dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="What Kind Of Information Do We collect From You?"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp14"
+                android:layout_marginTop="@dimen/_10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="We tend to collect various type of information that is essential to meet our legal responsibilities. The personal information that we collect from our target audience will vary from one person to another depending on the service engaged.
+\nSome of the common personal information that we collect from you is the name of the candidate, contact address, mobile number, email address, IP address and the pages that are visited on our website."
+                android:textColor="@color/grey_60"
+                android:textSize="@dimen/sp16"
+                android:layout_marginTop="5dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="How We Use Your Personal Information?"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp14"
+                android:layout_marginTop="@dimen/_10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Generally, we PetzPros take advantage of our engaged audience personal information for the following purposes.
+
+\n* To contact you by mobile, email or send post
+\n* To verify the identity of the respective candidate
+\n* To offer, maintain and enhance our service with you
+\n* To understand your needs and how to fulfill through our service
+\n* To send official notices, updates, security alerts, and other information
+\n* To give responses to your comments, questions and deliver customer service
+\n* To maintain our service records in accordance with legal and regulatory obligations"
+                android:textColor="@color/grey_60"
+                android:textSize="@dimen/sp16"
+                android:layout_marginTop="5dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Who Can Access Your Information?"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp14"
+                android:layout_marginTop="@dimen/_10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="
+\n* PetzPros assure that we don’t sell or rent your personal information to any third parties
+\n* We don’t share your information with third parties for marketing their product or service
+\n* We allow only our professional who maintains confidentiality as per the ethical standards with the customer information."
+                android:textColor="@color/grey_60"
+                android:textSize="@dimen/sp16"
+                android:layout_marginTop="5dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="How We Share Your Personal Information?"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp14"
+                android:layout_marginTop="@dimen/_10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Parties: As mentioned above we don’t sell your personal information to anybody in an identifiable manner. In some cases, we may share your personal information with third parties.
+\nAdvertisers: We permit advertisers or business partners to select certain information of the users who want to see their advertisements or promotional offers.
+\nAffiliated Business: At some cases, the businesses or third party website that PetzPros is affiliated with may sell or give the product or service information.
+\nAgents: Our PetzPros Company avails the support of other companies or professionals to perform certain tasks on behalf of us. So, we need to share your information with them to deliver a better service for you.
+\nProfile Information: The profile information that is provided such as name, location and any visual contents that user has included in the services may be shown to other users thus providing user interaction or meet your requirements from our service.
+\nProtection of PetzPros: We have reserved the right to access, read and disclose any information that as per the law or court order. They are created in such a way to apply our terms and condition for the safety of PetzPros, our staffs, our users and other people related to our services."
+                android:textColor="@color/grey_60"
+                android:textSize="@dimen/sp16"
+                android:layout_marginTop="5dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="How We Protect Your Personal Information?"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp14"
+                android:layout_marginTop="@dimen/_10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Your account will be protected with the help of a password to enable privacy and security. You should stay away from unauthorized access to your account and personal information by securing it with a password or provide limited access to your device. It is better to sign off the account once you have completed your task."
+                android:textColor="@color/grey_60"
+                android:textSize="@dimen/sp16"
+                android:layout_marginTop="5dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="How We Collect Cookie Information?"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp14"
+                android:layout_marginTop="@dimen/_10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="We implement different types of technologies to collect cookie information. Usually, most of the browsers are designed to accept the cookies utilized to gather essential information. To learn more about cookie information go through our cookie policy."
+                android:textColor="@color/grey_60"
+                android:textSize="@dimen/sp16"
+                android:layout_marginTop="5dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="How Can You Get Access And Update Your Information?"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp14"
+                android:layout_marginTop="@dimen/_10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Your personal information matters more for delivering our service to you. So, you can keep your information up to date in a clear cut manner. As we review our engaged customer information at the periodic interval you can make the changes by sending an email or contacting our service."
+                android:textColor="@color/grey_60"
+                android:textSize="@dimen/sp16"
+                android:layout_marginTop="5dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Account Deactivation"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp14"
+                android:layout_marginTop="@dimen/_10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Please contact us through contact number or email us whenever you don’t want to receive our service information to you."
+                android:textColor="@color/grey_60"
+                android:textSize="@dimen/sp16"
+                android:layout_marginTop="5dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Privacy Concerns"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp14"
+                android:layout_marginTop="@dimen/_10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="If you have any queries, concerns or complaints about our PetzPros Privacy Statement contact our customer support or send email 'contact@petzpros.com.'"
+                android:textColor="@color/grey_60"
+                android:textSize="@dimen/sp16"
+                android:layout_marginTop="5dp"/>
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</layout>

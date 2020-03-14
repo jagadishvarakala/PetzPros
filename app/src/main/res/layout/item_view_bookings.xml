@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.view.View" />
+
+        <variable
+            name="isPetOwner"
+            type="Boolean" />
+        <variable
+            name="details"
+            type="com.petz.pros.ui.main.ui.bookings.BookingsModule" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvEmployee"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:elevation="3dp"
+                card_view:cardCornerRadius="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:background="@{details.bookingStatus.equalsIgnoreCase(`accepted`) ? @color/colorLightGreen : @color/colorPrimaryDarker }"
+                        android:padding="@dimen/_10dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{details.serviceName}"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"
+                            android:textSize="@dimen/sp18"
+                            android:layout_alignParentStart="true"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{details.appointmentDate}"
+                            android:textColor="@color/white"
+                            android:textStyle="normal"
+                            android:gravity="end"
+                            android:layout_alignParentEnd="true"/>
+                    </RelativeLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_weight="0.1">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@{@string/label_booking_name(details.name)}"
+                                android:layout_marginStart="@dimen/_10dp"
+                                android:layout_marginEnd="@dimen/_10dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@{@string/label_booking_phone(details.phone)}"
+                                android:layout_marginStart="@dimen/_10dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@{@string/label_booking_address(details.address)}"
+                                android:layout_marginStart="@dimen/_10dp"
+                                android:layout_marginEnd="@dimen/_10dp"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_weight="0.1"
+                            android:gravity="end">
+                            <TextView
+                                android:id="@+id/payment_btn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Pay Now"
+                                android:textStyle="bold"
+                                android:textColor="@color/white"
+                                android:background="@color/color_light_yellow"
+                                android:layout_margin="@dimen/_10dp"
+                                android:padding="@dimen/_10dp"
+                                android:visibility="@{(details.bookingStatus.equalsIgnoreCase(`accepted`) &amp;&amp; details.paymentStatus.equalsIgnoreCase(`noaction`) == false &amp;&amp; isPetOwner) ? View.VISIBLE : View.GONE}"/>
+                            <TextView
+                                android:id="@+id/track_btn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Track Now"
+                                android:textStyle="bold"
+                                android:textColor="@color/white"
+                                android:background="@color/color_light_yellow"
+                                android:layout_margin="@dimen/_10dp"
+                                android:padding="@dimen/_10dp"
+                                android:visibility="@{(details.bookingStatus.equalsIgnoreCase(`accepted`) &amp;&amp; details.paymentStatus.equalsIgnoreCase(`accepted`) &amp;&amp; isPetOwner &amp;&amp; details.serviceName.equalsIgnoreCase(`Dog Walking`)) ? View.VISIBLE : View.GONE}"/>
+
+                            <TextView
+                                android:id="@+id/service_start_btn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Start Service"
+                                android:textStyle="bold"
+                                android:textColor="@color/white"
+                                android:background="@color/color_light_yellow"
+                                android:layout_margin="@dimen/_10dp"
+                                android:padding="@dimen/_10dp"
+                                android:visibility="@{(details.bookingStatus.equalsIgnoreCase(`accepted`) &amp;&amp; details.paymentStatus.equalsIgnoreCase(`accepted`) &amp;&amp; !isPetOwner &amp;&amp; details.serviceName.equalsIgnoreCase(`Dog Walking`)) ? View.VISIBLE : View.GONE}"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/grey_10"
+                        android:layout_marginTop="@dimen/_10dp"/>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/_10dp"
+                        android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@{@string/label_booking_start(details.startTime)}"
+                        android:layout_alignParentStart="true"
+                        android:gravity="start"
+                        android:layout_weight="0.1"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@{@string/label_booking_end(details.endTime)}"
+                        android:layout_centerHorizontal="true"
+                        android:gravity="center"
+                        android:layout_weight="0.1"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@{@string/label_booking_amount(details.totalAmount)}"
+                        android:layout_alignParentEnd="true"
+                        android:gravity="end"
+                        android:layout_weight="0.1"/>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

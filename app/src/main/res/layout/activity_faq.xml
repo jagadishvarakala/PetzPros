@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Will my dog be walked with other dogs at the same time ?"
+            android:textSize="@dimen/sp16"
+            android:textColor="@color/colorAccent"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp14"
+            android:text="No, not unless they are your dogs and at your request. At PETZ we believe that each individual dog should be given one on one attention. Even before taking your dog to a doggy park where there may be interaction with other dogs our walkers will get your permission first." />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/sp16"
+            android:textColor="@color/colorAccent"
+            android:layout_marginTop="@dimen/_10dp"
+            android:text="What if I want to meet my walker before hiring them for the job ?" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp14"
+            android:text="After reviewing your potential walker profile and upon scheduling your reoccuring walks you will be given the option to meet and greet your walker. This is a great time for both parties to discuss the any tendencies the dog may have before the walks begin. All dogs are unique and have different behaviors." />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/sp16"
+            android:textColor="@color/colorAccent"
+            android:layout_marginTop="@dimen/_10dp"
+            android:text="If I am requested for a meet and greet what types of things should I speak about with the owner ?" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp14"
+            android:text="Good things to speak about would be your positive experiences with your own pets and or if you have any certifications such as first aid or grooming or any volunteer work you have done. Avoid speaking of negative experiences or anything which will make the owner uncomfortable." />
+    </LinearLayout>
+</layout>

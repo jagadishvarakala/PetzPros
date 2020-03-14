@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="serviceProvider"
+            type="com.petz.pros.ui.caretackerlist.CareTackersModel" />
+
+        <variable
+            name="bookingDetails"
+            type="com.petz.pros.ui.bookingdetails.BookingModel" />
+
+        <variable
+            name="callback"
+            type="com.petz.pros.ui.bookingdetails.BookingMvpPresenter" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/_10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10dp"
+                android:text="Service Provider Details"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp21"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Name"
+                        android:textColorHint="@color/colorPrimary">
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:enabled="false"
+                            android:imeOptions="actionNext"
+                            android:inputType="text"
+                            android:text="@{serviceProvider.mFirstName}"
+                            android:textColor="#383838"
+                            android:textSize="@dimen/sp14"
+                            app:backgroundTint="#00ce8f" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:hint="Address"
+                        android:textColorHint="@color/colorPrimary"
+                        android:layout_marginTop="@dimen/_10dp">
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:background="@android:color/transparent"
+                            android:enabled="false"
+                            android:imeOptions="actionNext"
+                            android:inputType="textMultiLine"
+                            android:text="@{serviceProvider.mAddress +`\n`+serviceProvider.mCity+`\n`+serviceProvider.mCountry}"
+                            android:textColor="#383838"
+                            android:textSize="@dimen/sp14"
+                            app:backgroundTint="#00ce8f"
+                            android:gravity="start"/>
+
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Phone"
+                        android:textColorHint="@color/colorPrimary">
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:enabled="false"
+                            android:imeOptions="actionNext"
+                            android:inputType="text"
+                            android:text="@{serviceProvider.mPhone}"
+                            android:textColor="#383838"
+                            android:textSize="@dimen/sp14"
+                            app:backgroundTint="#00ce8f" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Selected Service"
+                        android:textColorHint="@color/colorPrimary"
+                        android:layout_marginTop="@dimen/_10dp">
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:enabled="false"
+                            android:imeOptions="actionNext"
+                            android:inputType="text"
+                            android:text="@{bookingDetails.serviceName}"
+                            android:textColor="#383838"
+                            android:textSize="@dimen/sp14"
+                            app:backgroundTint="#00ce8f" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Charge Per Hour"
+                        android:textColorHint="@color/colorPrimary"
+                        android:layout_marginTop="@dimen/_10dp">
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:enabled="false"
+                            android:imeOptions="actionNext"
+                            android:inputType="text"
+                            android:text="@{String.valueOf(serviceProvider.mChargePerHour)}"
+                            android:textColor="#383838"
+                            android:textSize="@dimen/sp14"
+                            app:backgroundTint="#00ce8f" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10dp"
+                android:text="Booking Details"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp21"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Appointment Date"
+                        android:textColorHint="@color/colorPrimary">
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:enabled="false"
+                            android:imeOptions="actionNext"
+                            android:inputType="text"
+                            android:text="@{bookingDetails.serviceDate}"
+                            android:textColor="#383838"
+                            android:textSize="@dimen/sp14"
+                            app:backgroundTint="#00ce8f" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Start Time"
+                        android:textColorHint="@color/colorPrimary"
+                        android:layout_marginTop="@dimen/_10dp">
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:enabled="false"
+                            android:imeOptions="actionNext"
+                            android:inputType="text"
+                            android:text="@{bookingDetails.serviceStartTime}"
+                            android:textColor="#383838"
+                            android:textSize="@dimen/sp14"
+                            app:backgroundTint="#00ce8f" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Total duration"
+                        android:textColorHint="@color/colorPrimary"
+                        android:layout_marginTop="@dimen/_10dp">
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:enabled="false"
+                            android:imeOptions="actionNext"
+                            android:inputType="text"
+                            android:text="@{bookingDetails.serviceTotalTime}"
+                            android:textColor="#383838"
+                            android:textSize="@dimen/sp14"
+                            app:backgroundTint="#00ce8f" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="40dp"
+                        android:hint="End Time"
+                        android:textColorHint="@color/colorPrimary">
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:enabled="false"
+                            android:imeOptions="actionNext"
+                            android:inputType="text"
+                            android:text="@{bookingDetails.serviceEndTime}"
+                            android:textColor="#383838"
+                            android:textSize="@dimen/sp14"
+                            app:backgroundTint="#00ce8f" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Total Amount to be paid"
+                        android:textColorHint="@color/colorPrimary"
+                        android:layout_marginTop="@dimen/_10dp">
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:enabled="false"
+                            android:imeOptions="actionNext"
+                            android:inputType="text"
+                            android:text="@{bookingDetails.serviceTotalAmount}"
+                            android:textColor="#383838"
+                            android:textSize="@dimen/sp14"
+                            app:backgroundTint="#00ce8f" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="@dimen/_10dp"
+            android:background="@color/colorPrimary"
+            android:text="Confirm Booking"
+            android:textColor="@color/white"
+            android:onClick="@{()->callback.onClickConfirmBooking(bookingDetails)}"/>
+    </RelativeLayout>
+</layout>

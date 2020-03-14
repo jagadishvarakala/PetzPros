@@ -21,30 +21,22 @@ public class MainPresenter<V extends MainMvpView> extends BasePresenter<V>
 
     @Override
     public void onViewPrepared() {
-        getMvpView().showLoading();
-        getCompositeDisposable().add(getDataManager()
-                        .getFeedList()
-                        .subscribeOn(getSchedulerProvider().io())
-                        .observeOn(getSchedulerProvider().ui())
-                        .subscribe(response -> {
-                            if (!isViewAttached()) {
-                                return;
-                            }
-                            getMvpView().hideLoading();
-                                /**
-                                 * Update view here
-                                 */
-                                getMvpView().updateFeed(response.getData());
-                        }, error -> {
-                            if (!isViewAttached()) {
-                                return;
-                            }
-                            getMvpView().hideLoading();
 
-                            /**
-                             * manage all kind of error in single place
-                             */
-                            handleApiError(error);
-                        }));
+    }
+
+    @Override
+    public String getUserName() {
+        return getDataManager().getUserName();
+    }
+
+    @Override
+    public String getUserEmail() {
+        return getDataManager().getUserEmail();
+    }
+
+    @Override
+    public void userLogout() {
+        getDataManager().setUserLoggedOut();
+        getMvpView().navigateUserSelection();
     }
 }

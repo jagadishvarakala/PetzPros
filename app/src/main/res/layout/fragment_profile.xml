@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="profile"
+            type="com.petz.pros.data.network.pojo.RegistrationRequest" />
+        <variable
+            name="callback"
+            type="com.petz.pros.ui.main.ui.profile.ProfileMvpPresenter" />
+    </data>
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_margin="@dimen/_10dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Personal Details"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        android:layout_marginStart="@dimen/_10dp"/>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_medium"
+        app:cardCornerRadius="6dp"
+        app:cardElevation="3dp"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/_10dp">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_first_name">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edtName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:text="@{profile.firstName}"
+                    android:textColor="#383838"
+                    android:textSize="@dimen/sp14"
+                    app:backgroundTint="#00ce8f" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_last_name">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edtLastName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:text="@{profile.lastName}"
+                    android:textColor="#383838"
+                    android:textSize="@dimen/sp14"
+                    app:backgroundTint="#00ce8f" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_email">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edtEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:inputType="textEmailAddress"
+                    android:text="@{profile.emailId}"
+                    android:textColor="#383838"
+                    android:textSize="@dimen/sp14"
+                    app:backgroundTint="#00ce8f"
+                    android:editable="false"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_phone">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edtMobile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:inputType="phone"
+                    android:maxLength="10"
+                    android:text="@{profile.phone}"
+                    android:digits="0123456789"
+                    android:textColor="#383838"
+                    android:textSize="@dimen/sp14"
+                    app:backgroundTint="#00ce8f"
+                    android:editable="false"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_password">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edtPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:inputType="textPassword"
+                    android:text="@{profile.password}"
+                    android:textColor="#383838"
+                    android:textSize="@dimen/sp14"
+                    app:backgroundTint="#00ce8f" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_confirm_password">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edtConfirmPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionDone"
+                    android:inputType="textPassword"
+                    android:text="@{profile.confirmPassword}"
+                    android:textColor="#383838"
+                    android:textSize="@dimen/sp14"
+                    app:backgroundTint="#00ce8f" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Address Details"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        android:layout_marginStart="@dimen/_10dp"/>
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_medium"
+        app:cardCornerRadius="6dp"
+        app:cardElevation="3dp"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/_10dp">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_address">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edtAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:text="@{profile.address}"
+                    android:textColor="#383838"
+                    android:textSize="@dimen/sp14"
+                    app:backgroundTint="#00ce8f" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_city">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edtCity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:text="@{profile.city}"
+                    android:textColor="#383838"
+                    android:textSize="@dimen/sp14"
+                    app:backgroundTint="#00ce8f" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_state">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edtState"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:text="@{profile.state}"
+                    android:textColor="#383838"
+                    android:textSize="@dimen/sp14"
+                    app:backgroundTint="#00ce8f" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_country">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edtCountry"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:text="@{profile.country}"
+                    android:textColor="#383838"
+                    android:textSize="@dimen/sp14"
+                    app:backgroundTint="#00ce8f" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_zipcode">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edtZipCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:maxLength="5"
+                    android:text="@{String.valueOf(profile.zipCode)}"
+                    android:textColor="#383838"
+                    android:textSize="@dimen/sp14"
+                    app:backgroundTint="#00ce8f" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pet Details"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        android:layout_marginStart="@dimen/_10dp"/>
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_medium"
+        app:cardCornerRadius="6dp"
+        app:cardElevation="3dp"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/_10dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Select Pet type*"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/sp16"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:id="@+id/pet_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_10dp"
+                    android:text="Dog"
+                    android:checked="@{profile.petDetails.type.equalsIgnoreCase(`dog`)? true:false}"/>
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10dp"
+                    android:text="Cat"
+                    android:checked="@{profile.petDetails.type.equalsIgnoreCase(`cat`)? true:false}"/>
+            </RadioGroup>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Pet Name">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edtPetName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:text="@{profile.petDetails.name}"
+                    android:textColor="#383838"
+                    android:textSize="@dimen/sp14"
+                    app:backgroundTint="#00ce8f" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Pet Breed">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edtPetBreed"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:text="@{profile.petDetails.breed}"
+                    android:textColor="#383838"
+                    android:textSize="@dimen/sp14"
+                    app:backgroundTint="#00ce8f" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Pet Age (in Years)">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edtPetAge"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:text="@{String.valueOf(profile.petDetails.ageInYears)}"
+                    android:textColor="#383838"
+                    android:textSize="@dimen/sp14"
+                    app:backgroundTint="#00ce8f" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Is your pet friendly ?*"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/sp16"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:id="@+id/pet_friendly"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_10dp"
+                    android:text="Yes"
+                    android:checked="@{profile.petDetails.friendly}"/>
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10dp"
+                    android:text="No"
+                    android:checked="@{profile.petDetails.friendly ? false : true}"/>
+            </RadioGroup>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="About Pet">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edtPetAbout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionDone"
+                    android:inputType="textMultiLine"
+                    android:text="@{profile.petDetails.about}"
+                    android:textColor="#383838"
+                    android:textSize="@dimen/sp14"
+                    app:backgroundTint="#00ce8f" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <Button
+        android:id="@+id/btn_update"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:text="Update Profile"
+        android:textColor="@color/colorWhite"
+        android:layout_marginBottom="@dimen/_10dp"/>
+</LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

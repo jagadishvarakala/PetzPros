@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -13,6 +14,7 @@ import com.petz.pros.R;
 import com.petz.pros.data.network.pojo.FeedItem;
 import com.petz.pros.ui.base.BaseViewHolder;
 import com.bumptech.glide.Glide;
+import com.petz.pros.ui.main.ui.home.HomeMvpPresenter;
 
 import java.util.List;
 
@@ -82,29 +84,39 @@ public class RssAdapter extends RecyclerView.Adapter<BaseViewHolder> {
 
     public interface Callback {
         void onEmptyViewRetryClick();
+
+        void onServiceClick(int position);
     }
 
     public class ViewHolder extends BaseViewHolder {
 
         ImageView thumbnail;
         TextView titleTextView;
-        TextView linkTextView;
-        TextView descriptionTextView;
+        TextView titleTextDesc;
+        Button bookNowBtn;
 
 
         public ViewHolder(View itemView) {
             super(itemView);
             thumbnail = itemView.findViewById(R.id.imageViewThumbnail);
             titleTextView = itemView.findViewById(R.id.textViewTitle);
-            linkTextView = itemView.findViewById(R.id.textViewUrl);
-            descriptionTextView = itemView.findViewById(R.id.textViewDescription);
+            titleTextDesc = itemView.findViewById(R.id.textViewDesc);
+            bookNowBtn = itemView.findViewById(R.id.btn_book_now);
+            bookNowBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if(mCallback != null){
+                        mCallback.onServiceClick(getAdapterPosition());
+                    }
+                }
+            });
+
         }
 
         protected void clear() {
             thumbnail.setImageDrawable(null);
             titleTextView.setText("");
-            linkTextView.setText("");
-            descriptionTextView.setText("");
+
         }
 
         public void onBind(int position) {
@@ -112,37 +124,17 @@ public class RssAdapter extends RecyclerView.Adapter<BaseViewHolder> {
 
             final FeedItem mFeedItem = mFeedItemList.get(position);
 
-            if (mFeedItem.getThumbnail() != null) {
+            if (mFeedItem.getServiceImage() != null) {
                 Glide.with(itemView.getContext())
-                        .load(mFeedItem.getThumbnail())
+                        .load(mFeedItem.getServiceImage())
                         .into(thumbnail);
             }
 
-            if (mFeedItem.getTitle() != null) {
-                titleTextView.setText(mFeedItem.getTitle());
+            if (mFeedItem.getServiceName() != null) {
+                titleTextView.setText(mFeedItem.getServiceName());
+                titleTextDesc.setText(mFeedItem.getDescription());
             }
 
-            if (mFeedItem.getLink() != null) {
-                linkTextView.setText(mFeedItem.getLink());
-            }
-
-            if (mFeedItem.getDescription() != null) {
-                descriptionTextView.setText(mFeedItem.getDescription());
-            }
-
-            linkTextView.setOnClickListener(v -> {
-                if (mFeedItem.getLink() != null) {
-                    try {
-                        Intent intent = new Intent();
-                        intent.setAction(Intent.ACTION_VIEW);
-                        intent.addCategory(Intent.CATEGORY_BROWSABLE);
-                        intent.setData(Uri.parse(mFeedItem.getLink()));
-                        itemView.getContext().startActivity(intent);
-                    } catch (Exception e) {
-                        Log.e(TAG, "onClick: Image url is not correct");
-                    }
-                }
-            });
         }
     }
 

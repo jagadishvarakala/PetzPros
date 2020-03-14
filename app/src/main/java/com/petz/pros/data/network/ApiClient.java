@@ -12,7 +12,7 @@ public class ApiClient {
     /********
      * URLS
      *******/
-    private static final String ROOT_URL = "http://api.petzpros.com/api/petowner/";
+    private static final String ROOT_URL = "http://api.petzpros.com/api/";
 
     /**
      * Get Retrofit Instance

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable
+            name="callback"
+            type="com.petz.pros.ui.main.ui.more.MoreMvpPresenter" />
+    </data>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_rounded_primary"
+            android:text="About"
+            android:textColor="@color/white"
+            android:onClick="@{()->callback.onClickAbout()}"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_rounded_primary"
+            android:text="FAQ"
+            android:textColor="@color/white"
+            android:layout_marginTop="@dimen/_10dp"
+            android:onClick="@{()->callback.onClickFAQ()}"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_rounded_primary"
+            android:text="Contact"
+            android:textColor="@color/white"
+            android:layout_marginTop="@dimen/_10dp"
+            android:onClick="@{()->callback.onClickContact()}" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_rounded_primary"
+            android:text="Terms &amp; Conditions"
+            android:textColor="@color/white"
+            android:layout_marginTop="@dimen/_10dp"
+            android:onClick="@{()->callback.onClickTermsConditions()}"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_rounded_primary"
+            android:text="Privacy Policy"
+            android:textColor="@color/white"
+            android:layout_marginTop="@dimen/_10dp"
+            android:onClick="@{()->callback.onClickPrivacy()}"/>
+
+    </LinearLayout>
+</layout>

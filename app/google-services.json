@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "701639219989",
+    "firebase_url": "https://petzpros-a6112.firebaseio.com",
+    "project_id": "petzpros-a6112",
+    "storage_bucket": "petzpros-a6112.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:701639219989:android:80d4b358040573146d271c",
+        "android_client_info": {
+          "package_name": "com.petz.pros"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "701639219989-d5njo0n5a5k9l0ttemhr848tnnttirfg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.petz.pros",
+            "certificate_hash": "85695ac2c9864a94ad101480b4a770912d7d51a2"
+          }
+        },
+        {
+          "client_id": "701639219989-8v3hgerhsh11285aslm253vegm4vbckv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBowmtvxqPL60nK2sJDG7yrJu976kS_bc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "701639219989-8v3hgerhsh11285aslm253vegm4vbckv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

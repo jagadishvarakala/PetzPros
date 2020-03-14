@@ -5,6 +5,9 @@ import com.google.gson.annotations.SerializedName;
 @SuppressWarnings("unused")
 public class LoginRequest {
 
+    @SerializedName("FCMDeviceId")
+    private String FCMDeviceId;
+
     @SerializedName("EmailId")
     private String mEmailId;
     @SerializedName("Password")
@@ -12,6 +15,9 @@ public class LoginRequest {
     @SerializedName("UserType")
     private String mUserType;
 
+    public void setFCMDeviceId(String FCMDeviceId) {
+        this.FCMDeviceId = FCMDeviceId;
+    }
 
     public void setmEmailId(String mEmailId) {
         this.mEmailId = mEmailId;

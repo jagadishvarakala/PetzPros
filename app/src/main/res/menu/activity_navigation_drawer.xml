@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_service"
+            android:title="@string/menu_services" />
+
+        <item
+            android:id="@+id/nav_profile"
+            android:title="@string/menu_profile" />
+
+        <item
+            android:id="@+id/nav_bookings"
+            android:title="@string/menu_bookings" />
+        <item
+            android:id="@+id/nav_history"
+            android:title="@string/menu_history" />
+        <item
+            android:id="@+id/nav_about"
+            android:title="@string/menu_about" />
+        <item
+            android:id="@+id/nav_faq"
+            android:title="@string/menu_faq" />
+        <item
+            android:id="@+id/nav_contact"
+            android:title="@string/menu_contact"/>
+        <item
+            android:id="@+id/nav_terms"
+            android:title="@string/menu_terms"/>
+        <item
+            android:id="@+id/nav_privacy"
+            android:title="@string/menu_privicy"/>
+        <item
+            android:id="@+id/footer_spacer_1"
+            android:checkable="false"
+            android:enabled="false"
+            android:orderInCategory="200"
+            android:title="" />
+        <item
+            android:id="@+id/footer_spacer_2"
+            android:checkable="false"
+            android:enabled="false"
+            android:orderInCategory="200"
+            android:title="" />
+    </group>
+</menu>

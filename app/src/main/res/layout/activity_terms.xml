@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_margin="@dimen/_10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10dp"
+                android:layout_marginBottom="@dimen/_10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="WELCOME TO "
+                    android:textColor="@color/grey_80"
+                    android:textSize="@dimen/sp21" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PETZPROS"
+                    android:textColor="@color/color_light_yellow"
+                    android:textSize="@dimen/sp21" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10dp"
+                android:text="ACCEPTANCE OF TERMS AND CONDITIONS"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp14" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="The terms of Service is a legal agreement between you and our PetzPros company. PetzPros pet service platform agree to offer the service mentioned in the contract in a reliable and trustworthy manner.
+\nThe Term controls your use of our software applications, resources, and services for pet owners and pet service providers to identify each other, communicate with each other and offer the required pet care services. Hereafter, the representatives or employees of PetzPros services are referred to as ‘Pet Sitter’.
+\nThe Terms regulates the use of PetzPros service for the individuals who access it from our website, our Facebook application, or any other platforms. You must understand that we PetzPros may change the terms from time to time and it will be effective when we post the altered terms on our service."
+                android:textColor="@color/grey_60"
+                android:textSize="@dimen/sp16" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10dp"
+                android:text="PETZPROS SERVICE"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp14" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="PetzPros is neither pet care service nor a service provider but acts as a medium for service providers and the pet owners. We don’t provide any warranties for the quality of services such as dog walking, dog sitting, pet boarding and other services offered by our pet care service providers.
+\nThe pet care service offering techniques are completely based on the service provider and we don’t have any control over it. Our PetzPros professionals will analyze the profiles of service provider list and undergo background verification. So, pet owners and service providers are responsible for making decisions in choosing the service."
+                android:textColor="@color/grey_60"
+                android:textSize="@dimen/sp16" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10dp"
+                android:text="ELIGIBILITY"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp14" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="In order to get access and use the PetzPros service, you should have completed 18 years. If you want to become a service provider you should be legally eligible and you have complied with all federal, state, county, municipal and other laws that are applicable to you.
+\nIn addition to this, you must possess business licenses, permits, and essential requirements to deliver pet services. Note that your application will be rejected in case of false information."
+                android:textColor="@color/grey_60"
+                android:textSize="@dimen/sp16" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10dp"
+                android:text="INSURANCE"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp14" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Service providers are responsible for providing their own pet insurance for their clients. PetzPros doesn’t provide any pet service insurance."
+                android:textColor="@color/grey_60"
+                android:textSize="@dimen/sp16" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10dp"
+                android:text="PRIVACY"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp14" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Personal information related to the clients collected by PetzPros is not shared or sold to the third party without permission. Visit the Privacy and Policy terms to know more about these terms in detail."
+                android:textColor="@color/grey_60"
+                android:textSize="@dimen/sp16" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10dp"
+                android:text="REVIEWS"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp14" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Being a service provider you are not limited to get access to the reviews mentioned about your service in the PetzPros platform even after termination of membership with us. However, we reserve right to post, view, edit or remove these reviews from the PetzPros service in any case."
+                android:textColor="@color/grey_60"
+                android:textSize="@dimen/sp16" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10dp"
+                android:text="THE TRANSACTION BETWEEN PET OWNERS AND SERVICE PROVIDERS"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp14" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Our PetzPros platform can be used for searching and offering pet care service and make the payment. Keep in mind that all transactions performed in the PetzPros service are between service providers and the pet owners. When you sign the contract agree that PetzPros has no liability for damages that may happen with the pet care services or transactions made on it."
+                android:textColor="@color/grey_60"
+                android:textSize="@dimen/sp16" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10dp"
+                android:text="BOOKING &amp; PAYMENT"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp14" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Clients should make the service bookings earlier to receive the service without fail. It is better to make the bookings two weeks before the commencement of the service date. Once you make the full payment with PetzPros, you will receive the booking confirmation.
+\nThe best part about payment is that clients don’t want to pay any fees for availing the service. The service providers have to pay the payment either monthly or annually. In case, if you want to terminate you should make prior information to us such that we can refund the amount paid for the booking."
+                android:textColor="@color/grey_60"
+                android:textSize="@dimen/sp16" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10dp"
+                android:text="TAXES"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp14" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="You should agree and pay the applicable taxes that are assigned for your use of PetzPros service except for income and gross receipts taxes. Otherwise, you have to pay the income tax available for your service payment."
+                android:textColor="@color/grey_60"
+                android:textSize="@dimen/sp16" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10dp"
+                android:text="PETZPROS TRADEMARKS"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp14" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="PetzPros possess the rights and its trademarks, service marks, business logo, brand name. For the pet care service provider, we PetzPros make the membership on our platform and give the non-transferrable license. The right of using the PetzPros marks will be canceled if you terminate the membership based on the terms of the agreement.
+\nIf you have any queries regarding the terms and conditions send an email to us 'contact@petzpros.com'"
+                android:textColor="@color/grey_60"
+                android:textSize="@dimen/sp16" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

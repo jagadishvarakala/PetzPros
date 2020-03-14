@@ -2,12 +2,17 @@ package com.petz.pros.ui.login;
 
 import android.os.Handler;
 
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.petz.pros.data.DataManager;
 import com.petz.pros.data.network.ApiClient;
 import com.petz.pros.data.network.ApiInterface;
 import com.petz.pros.data.network.pojo.LoginRequest;
+import com.petz.pros.data.network.pojo.RegistrationRequest;
 import com.petz.pros.ui.base.BasePresenter;
+import com.petz.pros.utils.CommonUtils;
 import com.petz.pros.utils.rx.SchedulerProvider;
+
+import java.io.IOException;
 
 import javax.inject.Inject;
 
@@ -33,28 +38,15 @@ public class LoginPresenter<V extends LoginMvpView> extends BasePresenter<V>
                 getMvpView().showInputEmailError("Invalid Email");
             }else if(getMvpView().getPassword().trim().equals("")){
                 getMvpView().showInputPasswordError("Password cannot be Blank");
-            }else if(getMvpView().getPassword().trim().length() > 4){
-                getMvpView().showInputPasswordError("password more then 4 characters");
+            }else if(!CommonUtils.validatePassword(getMvpView().getPassword().trim())){
+                getMvpView().showInputPasswordError("Password must contain at least four characters, including uppercase, lowercase letters and numbers");
             } else {
                 getMvpView().showLoading();
-                new Handler().postDelayed(() -> {
-                    if (!isViewAttached()) {
-                        return;
-                    }
-                    showUsers();
-                    // set demo user
-//                    UserProfile mProfile = new UserProfile();
-//                    mProfile.setFirstName("Dinesh");
-//                    mProfile.setLastName("Kumar");
-//                    mProfile.setEmail("dinesh@gmail.com");
-//                    mProfile.setUserId("1");
-//                    //update preferences
-//                    getDataManager().updateUserInfo("access toekn", 1l, LoggedInMode.LOGGED_IN_MODE_SERVER, "", mProfile.getEmail(), "");
-//                    getMvpView().onLoginSuccess(mProfile);
-//
-//                    getMvpView().hideLoading();
-                }, 1000);
-
+                if(getMvpView().getUserType().equalsIgnoreCase("pet owner")){
+                    ownerLogin();
+                }else{
+                    careTackerLogin();
+                }
             }
 
         }
@@ -67,33 +59,49 @@ public class LoginPresenter<V extends LoginMvpView> extends BasePresenter<V>
 
     }
 
-    private void showUsers() {
-
-
+    @Override
+    public void ownerLogin() {
         if (getMvpView().isNetworkConnected()) {
-
-
             //Creating an object of our api interface
             ApiInterface api = ApiClient.getApiService();
             LoginRequest loginRequest = new LoginRequest();
             loginRequest.setmEmailId(getMvpView().getEmail());
             loginRequest.setmPassword(getMvpView().getPassword());
             loginRequest.setmUserType(getMvpView().getUserType());
+            loginRequest.setFCMDeviceId(FirebaseInstanceId.getInstance().getToken());
+            getMvpView().showLoading();
+            Call<RegistrationRequest> call = api.ownerLogin(loginRequest );
 
-            Call<ResponseBody> call = api.userLogin(loginRequest );
-
-            call.enqueue(new Callback<ResponseBody>() {
+            call.enqueue(new Callback<RegistrationRequest>() {
                 @Override
-                public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                    if (response.isSuccessful()) {
-                        //Dismiss Dialog
+                public void onResponse(Call<RegistrationRequest> call, Response<RegistrationRequest> response) {
+
+                    if (response.code() == 200) {
+                        if (response.isSuccessful()) {
+                            //Dismiss Dialog
+                            getMvpView().hideLoading();
+                            getDataManager().updateUserInfo(response.body().getId(), response.body().getUserType(), response.body().getFirstName() , response.body().getLastName(),
+                                    response.body().getEmailId(), response.body().getPhone(),response.body().getPassword());
+                            getDataManager().updateUserAddress(response.body().getAddress(),response.body().getCity(),response.body().getState(),
+                                    response.body().getCountry(),response.body().getZipCode());
+                            getDataManager().updatePetDetails(response.body().getPetDetails().getId(),response.body().getPetDetails().getType(),response.body().getPetDetails().getName(),
+                                    response.body().getPetDetails().getBreed(),response.body().getPetDetails().getAgeInYears(),response.body().getPetDetails().isFriendly(),response.body().getPetDetails().getAbout());
+
+                            getMvpView().onLoginSuccess("Successfully Login");
+                        }
+                    }else if(response.code() == 404){
                         getMvpView().hideLoading();
-                        getMvpView().onLoginSuccess(response.body());
+                        try {
+                            getMvpView().showMessage(response.errorBody().string());
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
                     }
+
                 }
 
                 @Override
-                public void onFailure(Call<ResponseBody> call, Throwable t) {
+                public void onFailure(Call<RegistrationRequest> call, Throwable t) {
                     //Dismiss Dialog
                     getMvpView().hideLoading();
                 }
@@ -102,5 +110,61 @@ public class LoginPresenter<V extends LoginMvpView> extends BasePresenter<V>
             getMvpView().onError("Internet Connection Not Available");
 
         }
+    }
+
+    @Override
+    public void careTackerLogin() {
+        if (getMvpView().isNetworkConnected()) {
+            //Creating an object of our api interface
+            ApiInterface api = ApiClient.getApiService();
+            LoginRequest loginRequest = new LoginRequest();
+            loginRequest.setmEmailId(getMvpView().getEmail());
+            loginRequest.setmPassword(getMvpView().getPassword());
+            loginRequest.setmUserType(getMvpView().getUserType());
+            loginRequest.setFCMDeviceId(FirebaseInstanceId.getInstance().getToken());
+            getMvpView().showLoading();
+            Call<RegistrationRequest> call = api.careTackerLogin(loginRequest );
+
+            call.enqueue(new Callback<RegistrationRequest>() {
+                @Override
+                public void onResponse(Call<RegistrationRequest> call, Response<RegistrationRequest> response) {
+
+                    if (response.code() == 200) {
+                        if (response.isSuccessful()) {
+                            //Dismiss Dialog
+                            getMvpView().hideLoading();
+                            getDataManager().updateUserInfo(response.body().getId(), response.body().getUserType(), response.body().getFirstName() , response.body().getLastName(),
+                                    response.body().getEmailId(), response.body().getPhone(),response.body().getPassword());
+                            getDataManager().updateUserAddress(response.body().getAddress(),response.body().getCity(),response.body().getState(),
+                                    response.body().getCountry(),response.body().getZipCode());
+                            getDataManager().updateServiceList(response.body().getServiceIdList(),response.body().getChargePerHour());
+                            getDataManager().updateBankDetails(response.body().getAccountNumber(),response.body().getBankName(),response.body().getBranch(),response.body().getIfscCode());
+                            getMvpView().onLoginCareTaker("Successfully Login");
+                        }
+                    }else if(response.code() == 404){
+                        getMvpView().hideLoading();
+                        try {
+                            getMvpView().showMessage(response.errorBody().string());
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                }
+
+                @Override
+                public void onFailure(Call<RegistrationRequest> call, Throwable t) {
+                    //Dismiss Dialog
+                    getMvpView().hideLoading();
+                }
+            });
+        } else {
+            getMvpView().onError("Internet Connection Not Available");
+
+        }
+    }
+
+    private void showUsers() {
+
     }
 }

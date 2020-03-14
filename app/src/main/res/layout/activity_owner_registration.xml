@@ -23,7 +23,7 @@
                 android:id="@+id/step_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="16dp"
+                android:paddingBottom="@dimen/_10dp"
                 app:sv_animationType="Line"
                 app:sv_doneCircleColor="@color/colorAccent"
                 app:sv_doneCircleRadius="12dp"
@@ -50,7 +50,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/step_view"
-                android:layout_above="@+id/btn_next"/>
+                android:layout_above="@+id/btn_next"
+                android:paddingStart="@dimen/_10dp"
+                android:paddingEnd="@dimen/_10dp"/>
             <Button
                 android:id="@+id/btn_next"
                 android:layout_width="match_parent"

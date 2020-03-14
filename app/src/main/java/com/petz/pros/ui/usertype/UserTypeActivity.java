@@ -10,6 +10,7 @@ import com.petz.pros.R;
 import com.petz.pros.databinding.ActivityUserTypeBinding;
 import com.petz.pros.ui.base.BaseActivity;
 import com.petz.pros.ui.login.LoginActivity;
+import com.petz.pros.utils.Singleton;
 
 import javax.inject.Inject;
 
@@ -34,6 +35,7 @@ public class UserTypeActivity extends BaseActivity implements UserTypeMvpView{
         userTypeBinding.petOwnerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Singleton.getInstance().selectedUserType = "pet owner";
                 Intent intent = new Intent(UserTypeActivity.this,LoginActivity.class);
                 intent.putExtra("userType",1);
                 startActivity(intent);
@@ -43,6 +45,7 @@ public class UserTypeActivity extends BaseActivity implements UserTypeMvpView{
         userTypeBinding.petCareTakerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Singleton.getInstance().selectedUserType = "pet care taker";
                 Intent intent = new Intent(UserTypeActivity.this,LoginActivity.class);
                 intent.putExtra("userType",2);
                 startActivity(intent);

@@ -21,6 +21,9 @@ public class User {
     @PrimaryKey(autoGenerate = true)
     private int uid;
 
+    @ColumnInfo(name = "user_Id")
+    private int mUserId;
+
     @ColumnInfo(name = "first_name")
     private String mFirstName;
 
@@ -33,25 +36,18 @@ public class User {
     @ColumnInfo(name = "mobile")
     private String mMobile;
 
-    @ColumnInfo(name = "address")
-    private String mAddress;
-
-
-    @ColumnInfo(name = "image_uri")
-    private String mImageUrl;
-
     @ColumnInfo(name = "last_update")
     private Date mLastUpdate;
 
     @ColumnInfo(name = "created_at")
     private Date mCreatedAt;
 
-    public User(String mFirstName, String mLastName, String mEmail, String mMobile, String mAddress, Date mLastUpdate, Date mCreatedAt) {
+    public User(int mUserId,String mFirstName, String mLastName, String mEmail, String mMobile, Date mLastUpdate, Date mCreatedAt) {
+        this.mUserId = mUserId;
         this.mFirstName = mFirstName;
         this.mLastName = mLastName;
         this.mEmail = mEmail;
         this.mMobile = mMobile;
-        this.mAddress = mAddress;
         this.mLastUpdate = mLastUpdate;
         this.mCreatedAt = mCreatedAt;
     }
@@ -62,6 +58,14 @@ public class User {
 
     public void setUid(int uid) {
         this.uid = uid;
+    }
+
+    public int getUserId() {
+        return mUserId;
+    }
+
+    public void setUserId(int mUserId) {
+        this.mUserId = mUserId;
     }
 
     public String getFirstName() {
@@ -96,13 +100,6 @@ public class User {
         this.mMobile = mMobile;
     }
 
-    public String getAddress() {
-        return mAddress;
-    }
-
-    public void setAddress(String mAddress) {
-        this.mAddress = mAddress;
-    }
 
     public Date getLastUpdate() {
         return mLastUpdate;
@@ -120,11 +117,4 @@ public class User {
         this.mCreatedAt = mCreatedAt;
     }
 
-    public String getImageUrl() {
-        return mImageUrl;
-    }
-
-    public void setImageUrl(String mImageUrl) {
-        this.mImageUrl = mImageUrl;
-    }
 }

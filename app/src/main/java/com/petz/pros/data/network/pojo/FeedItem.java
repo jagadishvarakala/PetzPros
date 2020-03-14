@@ -2,70 +2,37 @@
 package com.petz.pros.data.network.pojo;
 
 
-import com.google.gson.annotations.SerializedName;
+import android.graphics.drawable.Drawable;
+
 
 @SuppressWarnings("unused")
 public class FeedItem {
 
-    @SerializedName("author")
-    private String mAuthor;
-    @SerializedName("description")
-    private String mDescription;
-    @SerializedName("link")
-    private String mLink;
-    @SerializedName("pubDate")
-    private String mPubDate;
-    @SerializedName("thumbnail")
-    private String mThumbnail;
-    @SerializedName("title")
-    private String mTitle;
+   private String serviceName;
+   private int serviceId;
+   private Drawable serviceImage;
+   private String description;
 
-    public String getAuthor() {
-        return mAuthor;
+    public FeedItem( int serviceId,String serviceName, Drawable serviceImage,String desc) {
+        this.serviceName = serviceName;
+        this.serviceId = serviceId;
+        this.serviceImage = serviceImage;
+        this.description = desc;
     }
 
-    public void setAuthor(String author) {
-        mAuthor = author;
+    public String getServiceName() {
+        return serviceName;
+    }
+
+    public int getServiceId() {
+        return serviceId;
+    }
+
+    public Drawable getServiceImage() {
+        return serviceImage;
     }
 
     public String getDescription() {
-        return mDescription;
+        return description;
     }
-
-    public void setDescription(String description) {
-        mDescription = description;
-    }
-
-    public String getLink() {
-        return mLink;
-    }
-
-    public void setLink(String link) {
-        mLink = link;
-    }
-
-    public String getPubDate() {
-        return mPubDate;
-    }
-
-    public void setPubDate(String pubDate) {
-        mPubDate = pubDate;
-    }
-
-    public String getThumbnail() {
-        return mThumbnail;
-    }
-
-    public void setThumbnail(String thumbnail) {
-        mThumbnail = thumbnail;
-    }
-
-    public String getTitle() {
-        return mTitle;
-    }
-
-    public void setTitle(String title) {
-        mTitle = title;
-    }
-
 }

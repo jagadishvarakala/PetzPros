@@ -1,19 +1,21 @@
 package com.petz.pros.ui.login;
 
 import android.os.Bundle;
-import android.view.View;
 
 import androidx.databinding.DataBindingUtil;
 
 import com.petz.pros.R;
 import com.petz.pros.databinding.ActivityLoginBinding;
 import com.petz.pros.ui.base.BaseActivity;
-import com.petz.pros.ui.main.MainActivity;
+import com.petz.pros.ui.forgotpassword.ForgotPasswordActivity;
+import com.petz.pros.ui.main.NavigationActivity;
+import com.petz.pros.ui.main.ui.dashboard.DashBoardActivity;
 import com.petz.pros.ui.registration.OwnerRegistrationActivity;
+import com.petz.pros.ui.registration.caretacker.CareTackerRegistrationActivity;
+
+import java.util.Objects;
 
 import javax.inject.Inject;
-
-import okhttp3.ResponseBody;
 
 /**
  * A login screen that offers login via email/password.
@@ -24,7 +26,6 @@ public class LoginActivity extends BaseActivity implements LoginMvpView {
 
 
     private ActivityLoginBinding activityLoginBinding;
-    private int userType = 0;
 
     // UI references.
     @Override
@@ -38,19 +39,16 @@ public class LoginActivity extends BaseActivity implements LoginMvpView {
 
     @Override
     protected void setUp() {
-        userType = getIntent().getIntExtra("userType",0);
-        activityLoginBinding.btnLogin.setOnClickListener(v -> {
-          mPresenter.onLoginClick();
+        activityLoginBinding.btnLogin.setOnClickListener(v -> mPresenter.onLoginClick());
+
+        activityLoginBinding.linkSignup.setOnClickListener(view -> {
+            if (getIntent().getIntExtra("userType", 0) == 1)
+                startActivity(OwnerRegistrationActivity.getStartIntent(LoginActivity.this, getIntent().getIntExtra("userType", 0)));
+            else
+                startActivity(CareTackerRegistrationActivity.getStartIntent(LoginActivity.this, getIntent().getIntExtra("userType", 0)));
         });
 
-        activityLoginBinding.linkSignup.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(userType == 1){
-                    startActivity(OwnerRegistrationActivity.getStartIntent(LoginActivity.this));
-                }
-            }
-        });
+        activityLoginBinding.linkForgotPassword.setOnClickListener(view -> startActivity(ForgotPasswordActivity.getStartIntent(LoginActivity.this, getIntent().getIntExtra("userType", 0))));
     }
 
     @Override
@@ -60,33 +58,40 @@ public class LoginActivity extends BaseActivity implements LoginMvpView {
     }
 
     @Override
-    public void onLoginSuccess(ResponseBody  responseBody) {
-        startActivity(MainActivity.getStartIntent(this));
+    public void onLoginSuccess(String responseBody) {
+        showMessage(responseBody);
+        startActivity(NavigationActivity.getStartIntent(this));
+    }
+
+    @Override
+    public void onLoginCareTaker(String message) {
+        showMessage(message);
+        startActivity(DashBoardActivity.getIntent(this));
     }
 
     @Override
     public String getEmail() {
-        return activityLoginBinding.inputEmail.getText().toString();
+        return Objects.requireNonNull(activityLoginBinding.inputEmail.getText()).toString();
     }
 
     @Override
     public String getPassword() {
-        return activityLoginBinding.inputPassword.getText().toString();
+        return Objects.requireNonNull(activityLoginBinding.inputPassword.getText()).toString();
     }
 
     @Override
     public String getUserType() {
-        return userType == 1 ? "pet owner":"pet caretaker";
+        return getIntent().getIntExtra("userType", 0) == 1 ? "pet owner" : "pet care taker";
     }
 
     @Override
     public void showInputEmailError(String errorMessage) {
         activityLoginBinding.inputEmail.setError(errorMessage);
-       // showMessage(getString(R.string.input_invalid));
+        // showMessage(getString(R.string.input_invalid));
     }
 
     @Override
-    public void showInputPasswordError(String errorMessage){
+    public void showInputPasswordError(String errorMessage) {
         activityLoginBinding.inputPassword.setError(errorMessage);
     }
 

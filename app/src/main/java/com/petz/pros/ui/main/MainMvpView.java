@@ -11,4 +11,6 @@ import java.util.List;
  */
 public interface MainMvpView extends MvpView {
     void updateFeed(List<FeedItem> feedItemList);
+
+    void navigateUserSelection();
 }

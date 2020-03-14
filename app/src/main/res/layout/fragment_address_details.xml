@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+
+    </data>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
@@ -18,12 +22,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="@dimen/spacing_medium">
+            android:padding="@dimen/_10dp">
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="17dp"
                 android:hint="@string/hint_address">
 
                 <androidx.appcompat.widget.AppCompatEditText
@@ -32,10 +35,9 @@
                     android:layout_height="wrap_content"
                     android:imeOptions="actionNext"
                     android:inputType="text"
-                    android:paddingStart="5dp"
                     android:text=""
                     android:textColor="#383838"
-                    android:textSize="20sp"
+                    android:textSize="@dimen/sp14"
                     app:backgroundTint="#00ce8f" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -44,7 +46,6 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="17dp"
                 android:hint="@string/hint_city">
 
                 <androidx.appcompat.widget.AppCompatEditText
@@ -53,10 +54,9 @@
                     android:layout_height="wrap_content"
                     android:imeOptions="actionNext"
                     android:inputType="text"
-                    android:paddingStart="5dp"
                     android:text=""
                     android:textColor="#383838"
-                    android:textSize="20sp"
+                    android:textSize="@dimen/sp14"
                     app:backgroundTint="#00ce8f" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -64,7 +64,6 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="17dp"
                 android:hint="@string/hint_state">
 
                 <androidx.appcompat.widget.AppCompatEditText
@@ -73,10 +72,9 @@
                     android:layout_height="wrap_content"
                     android:imeOptions="actionNext"
                     android:inputType="text"
-                    android:paddingStart="5dp"
                     android:text=""
                     android:textColor="#383838"
-                    android:textSize="20sp"
+                    android:textSize="@dimen/sp14"
                     app:backgroundTint="#00ce8f" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -84,7 +82,6 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="17dp"
                 android:hint="@string/hint_country">
 
                 <androidx.appcompat.widget.AppCompatEditText
@@ -93,10 +90,9 @@
                     android:layout_height="wrap_content"
                     android:imeOptions="actionNext"
                     android:inputType="text"
-                    android:paddingStart="5dp"
                     android:text=""
                     android:textColor="#383838"
-                    android:textSize="20sp"
+                    android:textSize="@dimen/sp14"
                     app:backgroundTint="#00ce8f" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -104,19 +100,18 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="17dp"
                 android:hint="@string/hint_zipcode">
 
                 <androidx.appcompat.widget.AppCompatEditText
                     android:id="@+id/edtZipCode"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:imeOptions="actionNext"
-                    android:inputType="text"
-                    android:paddingStart="5dp"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:maxLength="5"
                     android:text=""
                     android:textColor="#383838"
-                    android:textSize="20sp"
+                    android:textSize="@dimen/sp14"
                     app:backgroundTint="#00ce8f" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -124,3 +119,4 @@
     </com.google.android.material.card.MaterialCardView>
 
 </LinearLayout>
+</layout>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_service">
+
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.petz.pros.ui.main.ui.profile.ProfileFragment"
+        android:label="@string/menu_profile"
+        tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/nav_service"
+        android:name="com.petz.pros.ui.main.ui.home.HomeFragment"
+        android:label="@string/menu_services"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_bookings"
+        android:name="com.petz.pros.ui.main.ui.bookings.BookingsFragment"
+        android:label="@string/menu_bookings"
+        tools:layout="@layout/fragment_bookings" />
+
+    <fragment
+        android:id="@+id/nav_history"
+        android:name="com.petz.pros.ui.main.ui.history.HistoryFragment"
+        android:label="@string/menu_history"
+        tools:layout="@layout/fragment_history" />
+
+    <fragment
+        android:id="@+id/nav_about"
+        android:name="com.petz.pros.ui.main.ui.about.AboutFragment"
+        android:label="@string/menu_about"
+        tools:layout="@layout/activity_about" />
+
+    <fragment
+        android:id="@+id/nav_faq"
+        android:name="com.petz.pros.ui.main.ui.faq.FaqFragment"
+        android:label="@string/menu_faq"
+        tools:layout="@layout/activity_faq" />
+
+    <fragment
+        android:id="@+id/nav_contact"
+        android:name="com.petz.pros.ui.main.ui.contact.ContactFragment"
+        android:label="@string/menu_contact"
+        tools:layout="@layout/activity_contact" />
+    <fragment
+        android:id="@+id/nav_terms"
+        android:name="com.petz.pros.ui.main.ui.terms.TermsConditionsFragment"
+        android:label="@string/menu_terms"
+        tools:layout="@layout/activity_terms" />
+    <fragment
+        android:id="@+id/nav_privacy"
+        android:name="com.petz.pros.ui.main.ui.privicy.PrivacyPolicyFragment"
+        android:label="@string/menu_privicy"
+        tools:layout="@layout/activity_privacy" />
+
+</navigation>

@@ -6,4 +6,8 @@ public interface LoginMvpPresenter<V extends LoginMvpView> extends MvpPresenter<
     void onLoginClick();
 
     void onSignUpLink();
+
+    void ownerLogin();
+
+    void careTackerLogin();
 }

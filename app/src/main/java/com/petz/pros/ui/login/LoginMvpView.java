@@ -5,7 +5,9 @@ import com.petz.pros.ui.base.MvpView;
 import okhttp3.ResponseBody;
 
 public interface LoginMvpView extends MvpView {
-    void onLoginSuccess(ResponseBody response);
+    void onLoginSuccess(String response);
+
+    void onLoginCareTaker(String message);
 
     String getEmail();
 
