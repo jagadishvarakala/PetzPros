@@ -147,7 +147,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:imeOptions="actionDone"
-                android:inputType="textMultiLine"
+                android:inputType="text"
                 android:text=""
                 android:textColor="#383838"
                 android:textSize="@dimen/sp14"

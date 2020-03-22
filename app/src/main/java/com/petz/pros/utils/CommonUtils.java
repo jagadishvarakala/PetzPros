@@ -76,7 +76,7 @@ public class CommonUtils {
 
     public static String convertTime(String time){
 
-        DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss",Locale.getDefault());
+        DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss",Locale.getDefault());
         Date date = null;
         try {
             date = formatter.parse(time);
@@ -107,7 +107,7 @@ public class CommonUtils {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        SimpleDateFormat newFormat = new SimpleDateFormat("DD", Locale.getDefault());
+        SimpleDateFormat newFormat = new SimpleDateFormat("dd", Locale.getDefault());
         return newFormat.format(date);
     }
 
@@ -141,5 +141,19 @@ public class CommonUtils {
         }
         SimpleDateFormat newFormat = new SimpleDateFormat("dd-MMM-yyyy hh:mm a", Locale.getDefault());
         return newFormat.format(date);
+    }
+
+    public static String convertedStringDate(String date){
+        SimpleDateFormat dateFormat= new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault());
+        SimpleDateFormat newFormat = new SimpleDateFormat("dd-MMM-yyyy", Locale.getDefault());
+        try {
+            Date d=dateFormat.parse(date);
+           return newFormat.format(d);
+        }
+        catch(Exception e) {
+            //java.text.ParseException: Unparseable date: Geting error
+            System.out.println("Excep"+e);
+        }
+        return "";
     }
 }

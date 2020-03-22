@@ -60,6 +60,7 @@ public class CareTackerRegistrationActivity extends BaseActivity implements Care
         registrationRequest = new RegistrationRequest();
         registrationRequest.setUserType(getIntent().getIntExtra("userType",0) == 1 ? "pet owner":"pet care taker");
         registrationRequest.setFCMDeviceId(FirebaseInstanceId.getInstance().getToken());
+        registrationRequest.setIsWalkerAvailable(true);
         setUp();
     }
 
@@ -131,6 +132,7 @@ public class CareTackerRegistrationActivity extends BaseActivity implements Care
     public void onSuccessRegistration(ResponseBody body) {
         showMessage("Successfully Registration Completed");
         startActivity(DashBoardActivity.getIntent(CareTackerRegistrationActivity.this));
+        finish();
     }
 
 

@@ -80,6 +80,7 @@ public class BookingsFragment extends BaseFragment implements BookingsMvpView {
     @Override
     public void showNoDataFound(String message) {
         fragmentBookingsBinding.nodataFoundText.setText(message);
+        updateBooking(new ArrayList<>());
     }
 
     @Override

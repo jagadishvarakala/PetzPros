@@ -57,11 +57,14 @@ public class PendingServicesActivity extends BaseActivity implements PendingServ
 
     @Override
     public void showNoDataFound(String message) {
+        modelArrayList.clear();
+        bookingsAdapter.setEmployeeList(modelArrayList);
         fragmentBookingsBinding.nodataFoundText.setText(message);
     }
 
     @Override
     public void updateBookings(ArrayList<BookingsModule> arrayLists) {
+        modelArrayList.clear();
         //modelArrayList = arrayLists;
         for(int i=0; i< arrayLists.size(); i++){
             if(arrayLists.get(i).isBookingStatus().equalsIgnoreCase("noaction")){

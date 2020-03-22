@@ -45,7 +45,7 @@ public class CareTackersAdapter extends RecyclerView.Adapter<CareTackersAdapter.
         careTackerBinding.takerName.setText(movie.getmFirstName() +" "+ movie.getmLastName());
         careTackerBinding.takerEmail.setText("Email : "+movie.getmEmailId());
         careTackerBinding.takerMobile.setText("Mobile : "+movie.getmPhone());
-        careTackerBinding.takerAddress.setText("Address : "+movie.getmAddress());
+        careTackerBinding.takerAddress.setText("Address : "+movie.getmAddress() +","+movie.getmCity()+","+movie.getmState()+","+movie.getmZipCode());
         careTackerBinding.takerCharge.setText("Charge per hour\n$"+String.valueOf(movie.getmChargePerHour()));
 
         careTackerBinding.itemBookBtn.setOnClickListener(new View.OnClickListener() {

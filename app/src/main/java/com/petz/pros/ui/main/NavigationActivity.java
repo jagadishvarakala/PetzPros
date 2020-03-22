@@ -77,6 +77,14 @@ public class NavigationActivity extends BaseActivity implements MainMvpView {
                 mPresenter.userLogout();
             }
         });
+
+        boolean extras = getIntent().getBooleanExtra("KEY", false);;
+        if (extras) {
+
+            NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+            navController.navigate(R.id.nav_bookings);
+
+        }
     }
 
 

@@ -26,6 +26,7 @@ import com.petz.pros.ui.main.NavigationActivity;
 import com.petz.pros.ui.main.ui.dashboard.DashBoardActivity;
 import com.petz.pros.ui.main.ui.past.PastServicesActivity;
 import com.petz.pros.ui.main.ui.pending.PendingServicesActivity;
+import com.petz.pros.ui.main.upcoming.UpcomingServicesActivity;
 import com.petz.pros.ui.splash.SplashActivity;
 
 import java.util.Map;
@@ -79,12 +80,16 @@ public class FirebaseMessaging extends FirebaseMessagingService {
             intent = new Intent(getApplicationContext(), PendingServicesActivity.class);
         } else if(className != null && className.equalsIgnoreCase("BOOKING_STATUS")) {
             intent = new Intent(getApplicationContext(), NavigationActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            intent.putExtra("data", title);
+            intent.putExtra("KEY", true);
         }else if(className != null && className.equalsIgnoreCase("PAYMENT_STATUS")){
-            intent = new Intent(getApplicationContext(), PastServicesActivity.class);
+            intent = new Intent(getApplicationContext(), UpcomingServicesActivity.class);
+            intent.putExtra("body",true);
         }else{
             intent = new Intent(getApplicationContext(), SplashActivity.class);
         }
-        PendingIntent pi = PendingIntent.getActivity(getApplicationContext(), 101, intent, 0);
+        PendingIntent pi = PendingIntent.getActivity(getApplicationContext(), 101, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 
         NotificationManager nm = (NotificationManager) getApplicationContext().getSystemService(NOTIFICATION_SERVICE);
 

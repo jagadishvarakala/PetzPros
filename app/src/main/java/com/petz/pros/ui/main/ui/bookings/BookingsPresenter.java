@@ -76,9 +76,8 @@ public class BookingsPresenter<V extends BookingsMvpView> extends BasePresenter<
             getMvpView().showLoading();
             //Creating an object of our api interface
             ApiInterface api = ApiClient.getApiService();
-
             Call<ResponseBody> call = api.updatePaymentStatus(bookingsModule );
-
+            bookingsModule.getBookingDetails().setName(getDataManager().getUserName());
             call.enqueue(new Callback<ResponseBody>() {
                 @Override
                 public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {

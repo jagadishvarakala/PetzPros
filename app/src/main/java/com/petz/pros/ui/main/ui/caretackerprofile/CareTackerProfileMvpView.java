@@ -9,4 +9,6 @@ public interface CareTackerProfileMvpView extends MvpView {
 
     void onSuccessProfileUpdate(RegistrationRequest body);
 
+    boolean getAvailabulity();
+
 }

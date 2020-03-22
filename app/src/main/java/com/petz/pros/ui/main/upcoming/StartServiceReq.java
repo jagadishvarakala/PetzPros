@@ -7,9 +7,9 @@ public class StartServiceReq {
     @SerializedName("Id")
     private int id;
     @SerializedName("BookingStatus")
-    private boolean bookingStatus;
+    private String bookingStatus;
     @SerializedName("PaymentStatus")
-    private boolean paymentStatus;
+    private String paymentStatus;
     @SerializedName("ActualStartTime")
     private String actualStartTime;
     @SerializedName("ActualEndTime")
@@ -19,11 +19,11 @@ public class StartServiceReq {
         this.id = id;
     }
 
-    public void setBookingStatus(boolean bookingStatus) {
+    public void setBookingStatus(String bookingStatus) {
         this.bookingStatus = bookingStatus;
     }
 
-    public void setPaymentStatus(boolean paymentStatus) {
+    public void setPaymentStatus(String paymentStatus) {
         this.paymentStatus = paymentStatus;
     }
 

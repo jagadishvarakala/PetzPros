@@ -119,7 +119,9 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/hint_password">
+                android:hint="@string/hint_password"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleDrawable="@drawable/show_password_selector">
 
                 <androidx.appcompat.widget.AppCompatEditText
                     android:id="@+id/edtPassword"
@@ -137,7 +139,9 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/hint_confirm_password">
+                android:hint="@string/hint_confirm_password"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleDrawable="@drawable/show_password_selector">
 
                 <androidx.appcompat.widget.AppCompatEditText
                     android:id="@+id/edtConfirmPassword"

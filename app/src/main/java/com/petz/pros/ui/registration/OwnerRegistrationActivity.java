@@ -117,6 +117,7 @@ public class OwnerRegistrationActivity extends BaseActivity implements OwnerRegi
     public void onSuccessRegistration(ResponseBody body) {
         showMessage("Successfully Registration Completed");
         startActivity(NavigationActivity.getStartIntent(OwnerRegistrationActivity.this));
+        finish();
     }
 
 

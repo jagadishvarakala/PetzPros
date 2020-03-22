@@ -132,7 +132,7 @@ public class PetCareTackerListActivity extends BaseActivity implements CareTacke
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        SimpleDateFormat fmtOut = new SimpleDateFormat("yyyy/MMM/dd",Locale.getDefault());
+        SimpleDateFormat fmtOut = new SimpleDateFormat("dd/MMM/yyyy",Locale.getDefault());
         return fmtOut.format(date);
     }
 
@@ -195,7 +195,7 @@ public class PetCareTackerListActivity extends BaseActivity implements CareTacke
         bookingModel.setServiceStartTime(getStartTime());
         bookingModel.setServiceEndTime(getEndTime());
         bookingModel.setServiceTotalTime(getTotalTime(getStartTime(),getEndTime(),false,0));
-        bookingModel.setServiceTotalAmount(getTotalTime(getStartTime(),getEndTime(),true,movie.getmChargePerHour()));
+        bookingModel.setServiceTotalAmount(getTotalAmount(getStartTime(),getEndTime(),true,movie.getmChargePerHour()));
         bookingModel.setAppointmentDate(getSelectedDate());
         bookingModel.setStartTime(getSelectedStartTime());
         bookingModel.setEndTime(getSelectedEndTime());
@@ -203,7 +203,13 @@ public class PetCareTackerListActivity extends BaseActivity implements CareTacke
         bookingModel.setServiceRefTypeId(getIntent().getIntExtra("service_id",0));
         bookingModel.setCareTackersModel(movie);
         bookingModel.setFCMDeviceId(movie.getFCMDeviceId());
+        bookingModel.setServiceDuration(getTotalDurationTime(getStartTime(),getEndTime()));
         startActivity(BookingActivity.getStartIntent(this,bookingModel,movie));
+    }
+
+    @Override
+    public void noDataFound(String message) {
+        tackerListBinding.nodataFoundText.setText(message);
     }
 
     private void displayDatePicker(){
@@ -309,7 +315,7 @@ public class PetCareTackerListActivity extends BaseActivity implements CareTacke
     }
 
     private String getTotalTime(String startTime, String endTime, boolean isPrice, int perHourCharge){
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("hh:mm a",Locale.getDefault());
         Date startDate = null;
         try {
             startDate = simpleDateFormat.parse(startTime);
@@ -343,10 +349,14 @@ public class PetCareTackerListActivity extends BaseActivity implements CareTacke
         int days = (int) (difference / (1000*60*60*24));
         int hours = (int) ((difference - (1000*60*60*24*days)) / (1000*60*60));
         int min = (int) (difference - (1000*60*60*24*days) - (1000*60*60*hours)) / (1000*60);
+        int priceMin = (int) (difference - (1000*60*60*24*days) ) / (1000*60);
         Log.i("log_tag","Hours: "+hours+", Mins: "+min);
 
         if(isPrice){
-            totalAmount =  hours*perHourCharge;
+            double mrp = perHourCharge;
+            double perMintCharge = mrp/60;
+          totalAmount =  rate(priceMin,perMintCharge);;
+
           return String.valueOf(totalAmount);
         }
         return String.format("%02d:%02d", hours, min);
@@ -355,6 +365,105 @@ public class PetCareTackerListActivity extends BaseActivity implements CareTacke
 
     }
 
+
+    private String getTotalDurationTime(String startTime, String endTime){
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("hh:mm a",Locale.getDefault());
+        Date startDate = null;
+        try {
+            startDate = simpleDateFormat.parse(startTime);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        Date endDate = null;
+        try {
+            endDate = simpleDateFormat.parse(endTime);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        long difference = endDate.getTime() - startDate.getTime();
+        if(difference<0)
+        {
+            Date dateMax = null;
+            try {
+                dateMax = simpleDateFormat.parse("24:00");
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+            Date dateMin = null;
+            try {
+                dateMin = simpleDateFormat.parse("00:00");
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+            difference=(dateMax.getTime() -startDate.getTime() )+(endDate.getTime()-dateMin.getTime());
+        }
+        int days = (int) (difference / (1000*60*60*24));
+        int hours = (int) ((difference - (1000*60*60*24*days)) / (1000*60*60));
+        int min = (int) (difference - (1000*60*60*24*days) - (1000*60*60*hours)) / (1000*60);
+        int priceMin = (int) (difference - (1000*60*60*24*days) ) / (1000*60);
+        Log.i("log_tag","Hours: "+hours+", Mins: "+min);
+
+
+        return hours + "hour "+min +" minutes";
+
+
+
+    }
+    private double getTotalAmount(String startTime, String endTime, boolean isPrice, int perHourCharge){
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("hh:mm a",Locale.getDefault());
+        Date startDate = null;
+        try {
+            startDate = simpleDateFormat.parse(startTime);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        Date endDate = null;
+        try {
+            endDate = simpleDateFormat.parse(endTime);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        long difference = endDate.getTime() - startDate.getTime();
+        if(difference<0)
+        {
+            Date dateMax = null;
+            try {
+                dateMax = simpleDateFormat.parse("24:00");
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+            Date dateMin = null;
+            try {
+                dateMin = simpleDateFormat.parse("00:00");
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+            difference=(dateMax.getTime() -startDate.getTime() )+(endDate.getTime()-dateMin.getTime());
+        }
+        int days = (int) (difference / (1000*60*60*24));
+        int hours = (int) ((difference - (1000*60*60*24*days)) / (1000*60*60));
+        int min = (int) (difference - (1000*60*60*24*days) - (1000*60*60*hours)) / (1000*60);
+        int priceMin = (int) (difference - (1000*60*60*24*days) ) / (1000*60);
+        Log.i("log_tag","Hours: "+hours+", Mins: "+min);
+
+        if(isPrice){
+            double mrp = perHourCharge;
+            double perMintCharge = mrp/60;
+            totalAmount =  rate(priceMin,perMintCharge);;
+
+            return totalAmount;
+        }
+        return 0.0;
+
+
+
+    }
+    public double rate(int minutes, double perHourCharge)
+    {
+        return perHourCharge*(minutes);
+    }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {// API 5+ solution

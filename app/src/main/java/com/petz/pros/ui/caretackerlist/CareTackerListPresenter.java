@@ -74,7 +74,7 @@ public class CareTackerListPresenter<V extends CareTackerMvpView> extends BasePr
                     }else if(response.code() == 404){
                         getMvpView().hideLoading();
                         try {
-                            getMvpView().showMessage(response.errorBody().string());
+                            getMvpView().noDataFound(response.errorBody().string());
                         } catch (IOException e) {
                             e.printStackTrace();
                         }

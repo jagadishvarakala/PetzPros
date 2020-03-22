@@ -293,8 +293,8 @@ public class UpdatingLocationActivity extends AppCompatActivity implements OnMap
             ApiInterface api = ApiClient.getApiService();
             StartServiceReq updateGeoReq = new StartServiceReq();
             updateGeoReq.setId(bookingsModule.getId());
-            updateGeoReq.setBookingStatus(true);
-            updateGeoReq.setPaymentStatus(true);
+            updateGeoReq.setBookingStatus("accepted");
+            updateGeoReq.setPaymentStatus("accepted");
             updateGeoReq.setActualEndTime(CommonUtils.getCurrentDateTime());
 
             Call<ResponseBody> call = api.END_SERVICE_REQ_CALL(updateGeoReq);

@@ -83,7 +83,7 @@
                             android:enabled="false"
                             android:imeOptions="actionNext"
                             android:inputType="textMultiLine"
-                            android:text="@{serviceProvider.mAddress +`\n`+serviceProvider.mCity+`\n`+serviceProvider.mCountry}"
+                            android:text="@{serviceProvider.mAddress +`\n`+serviceProvider.mCity+`\n`+serviceProvider.mState+`\n`+serviceProvider.mCountry}"
                             android:textColor="#383838"
                             android:textSize="@dimen/sp14"
                             app:backgroundTint="#00ce8f"
@@ -155,7 +155,7 @@
                             android:enabled="false"
                             android:imeOptions="actionNext"
                             android:inputType="text"
-                            android:text="@{String.valueOf(serviceProvider.mChargePerHour)}"
+                            android:text="@{`$ `+String.valueOf( serviceProvider.mChargePerHour)}"
                             android:textColor="#383838"
                             android:textSize="@dimen/sp14"
                             app:backgroundTint="#00ce8f" />
@@ -241,7 +241,7 @@
                             android:enabled="false"
                             android:imeOptions="actionNext"
                             android:inputType="text"
-                            android:text="@{bookingDetails.serviceTotalTime}"
+                            android:text="@{bookingDetails.serviceDuration}"
                             android:textColor="#383838"
                             android:textSize="@dimen/sp14"
                             app:backgroundTint="#00ce8f" />
@@ -291,7 +291,7 @@
                             android:enabled="false"
                             android:imeOptions="actionNext"
                             android:inputType="text"
-                            android:text="@{bookingDetails.serviceTotalAmount}"
+                            android:text="@{`$ `+String.format(`%.2f`,bookingDetails.serviceTotalAmount)}"
                             android:textColor="#383838"
                             android:textSize="@dimen/sp14"
                             app:backgroundTint="#00ce8f" />

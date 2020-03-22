@@ -13,6 +13,7 @@ import com.petz.pros.data.network.pojo.RegistrationRequest;
 import com.petz.pros.databinding.FragmentDashBoardBinding;
 import com.petz.pros.ui.base.BaseActivity;
 import com.petz.pros.ui.login.LoginActivity;
+import com.petz.pros.ui.main.NavigationActivity;
 import com.petz.pros.ui.main.ui.caretackerprofile.CareTackerProfileActivity;
 import com.petz.pros.ui.main.ui.more.MoreActivity;
 import com.petz.pros.ui.main.ui.past.PastServicesActivity;
@@ -32,7 +33,9 @@ public class DashBoardActivity extends BaseActivity implements DashBoardMvpView 
     private FragmentDashBoardBinding fragmentDashBoardBinding;
 
     public static Intent getIntent(Context context) {
-        return new Intent(context, DashBoardActivity.class);
+        Intent intent = new Intent(context, DashBoardActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        return intent;
     }
 
     @Override
@@ -85,7 +88,7 @@ public class DashBoardActivity extends BaseActivity implements DashBoardMvpView 
 
     @Override
     public void onClickProfile() {
-        startActivity(CareTackerProfileActivity.getIntent(this));
+        startActivity(CareTackerProfileActivity.getIntent(this,fragmentDashBoardBinding.availability.isChecked()));
     }
 
     @Override

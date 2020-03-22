@@ -87,8 +87,8 @@ public class UpcomingServicesPresenter<V extends UpcomingServicesMvpView> extend
             ApiInterface api = ApiClient.getApiService();
             StartServiceReq startServiceReq = new StartServiceReq();
             startServiceReq.setId(bookingsModule.getId());
-            startServiceReq.setBookingStatus(true);
-            startServiceReq.setPaymentStatus(true);
+            startServiceReq.setBookingStatus("accepted");
+            startServiceReq.setPaymentStatus("accepted");
             startServiceReq.setActualStartTime(CommonUtils.getCurrentDateTime());
 
             Call<ResponseBody> call = api.START_SERVICE_REQ_CALL(startServiceReq );

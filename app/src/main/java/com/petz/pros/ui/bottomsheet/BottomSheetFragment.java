@@ -20,6 +20,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.google.android.material.textfield.TextInputLayout;
 import com.petz.pros.R;
 import com.petz.pros.ui.main.ui.home.HomeMvpView;
+import com.petz.pros.utils.CommonUtils;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -69,7 +70,7 @@ public class BottomSheetFragment extends BottomSheetDialogFragment {
                     endTextInput.setError("Select End Time");
                     return;
                 }
-                SimpleDateFormat sdf = new SimpleDateFormat("hh:mm", Locale.getDefault());
+                SimpleDateFormat sdf = new SimpleDateFormat("hh:mm a", Locale.getDefault());
                 Date inTime = null;
                 Date outTime = null;
                 try {
@@ -80,7 +81,7 @@ public class BottomSheetFragment extends BottomSheetDialogFragment {
                 }
 
                 if (outTime != null) {
-                    if(isTimeAfter(inTime, outTime)) {
+                    if(!isTimeAfter(inTime, outTime)) {
                         endTextInput.setError("Start time exceeded End time");
                     }else{
                         if(clickListiner != null){
@@ -134,7 +135,7 @@ public class BottomSheetFragment extends BottomSheetDialogFragment {
                         mSelectedYear = year;
                         mSelectedMonth = monthOfYear;
                         mSelectedDay = dayOfMonth;
-                        appointmentDateText.setText(dayOfMonth + "-" + (monthOfYear + 1) + "-" + year);
+                        appointmentDateText.setText(CommonUtils.convertedStringDate(dayOfMonth + "-" + (monthOfYear + 1) + "-" + year));
                         appointTextInput.setError(null);
                     }
                 }, mYear, mMonth, mDay);
@@ -187,6 +188,6 @@ public class BottomSheetFragment extends BottomSheetDialogFragment {
     }
 
     private boolean isTimeAfter(Date startTime, Date endTime) {
-        return !endTime.after(startTime);
+        return endTime.after(startTime);
     }
 }

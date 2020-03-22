@@ -43,6 +43,7 @@ public class ForgotPasswordPresenter<V extends ForgotPasswordMvpView> extends Ba
     @Override
     public void ownerForgotPassword() {
         if (getMvpView().isNetworkConnected()) {
+            getMvpView().showLoading();
             //Creating an object of our api interface
             ApiInterface api = ApiClient.getApiService();
             LoginRequest loginRequest = new LoginRequest();
@@ -55,11 +56,16 @@ public class ForgotPasswordPresenter<V extends ForgotPasswordMvpView> extends Ba
             call.enqueue(new Callback<ResponseBody>() {
                 @Override
                 public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                    if (response.isSuccessful()) {
+                    if (response.code() == 200) {
                         //Dismiss Dialog
                         getMvpView().hideLoading();
                         getMvpView().onForgotPasswordSuccess(response.body());
+                    }else if(response.code() == 404){
+                        //Dismiss Dialog
+                        getMvpView().hideLoading();
+                        getMvpView().showMessage("Could not send email, Please try again !");
                     }
+
                 }
 
                 @Override
@@ -77,6 +83,7 @@ public class ForgotPasswordPresenter<V extends ForgotPasswordMvpView> extends Ba
     @Override
     public void careTackerForgotPassword() {
         if (getMvpView().isNetworkConnected()) {
+            getMvpView().showLoading();
             //Creating an object of our api interface
             ApiInterface api = ApiClient.getApiService();
             LoginRequest loginRequest = new LoginRequest();
@@ -89,10 +96,14 @@ public class ForgotPasswordPresenter<V extends ForgotPasswordMvpView> extends Ba
             call.enqueue(new Callback<ResponseBody>() {
                 @Override
                 public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                    if (response.isSuccessful()) {
+                    if (response.code() == 200) {
                         //Dismiss Dialog
                         getMvpView().hideLoading();
                         getMvpView().onForgotPasswordSuccess(response.body());
+                    }else if(response.code() == 404){
+                        //Dismiss Dialog
+                        getMvpView().hideLoading();
+                        getMvpView().showMessage("Could not send email, Please try again !");
                     }
                 }
 

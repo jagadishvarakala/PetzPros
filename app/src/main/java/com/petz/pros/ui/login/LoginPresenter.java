@@ -38,9 +38,11 @@ public class LoginPresenter<V extends LoginMvpView> extends BasePresenter<V>
                 getMvpView().showInputEmailError("Invalid Email");
             }else if(getMvpView().getPassword().trim().equals("")){
                 getMvpView().showInputPasswordError("Password cannot be Blank");
-            }else if(!CommonUtils.validatePassword(getMvpView().getPassword().trim())){
-                getMvpView().showInputPasswordError("Password must contain at least four characters, including uppercase, lowercase letters and numbers");
-            } else {
+            }
+//            else if(!CommonUtils.validatePassword(getMvpView().getPassword().trim())){
+//                getMvpView().showInputPasswordError("Password must contain at least four characters, including uppercase, lowercase letters and numbers");
+//            }
+            else {
                 getMvpView().showLoading();
                 if(getMvpView().getUserType().equalsIgnoreCase("pet owner")){
                     ownerLogin();

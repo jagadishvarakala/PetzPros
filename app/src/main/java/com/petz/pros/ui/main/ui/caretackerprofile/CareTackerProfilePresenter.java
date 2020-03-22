@@ -52,6 +52,7 @@ public class CareTackerProfilePresenter<V extends CareTackerProfileMvpView> exte
     public RegistrationRequest getProfileDetails() {
         RegistrationRequest request = new RegistrationRequest();
         request.setId(getDataManager().getUserId());
+        request.setIsWalkerAvailable(getMvpView().getAvailabulity());
         request.setFirstName(getDataManager().getUserFirstName());
         request.setLastName(getDataManager().getUserLastName());
         request.setEmailId(getDataManager().getUserEmail());

@@ -107,7 +107,7 @@
                                 android:background="@color/color_light_yellow"
                                 android:layout_margin="@dimen/_10dp"
                                 android:padding="@dimen/_10dp"
-                                android:visibility="@{(details.bookingStatus.equalsIgnoreCase(`accepted`) &amp;&amp; details.paymentStatus.equalsIgnoreCase(`noaction`) == false &amp;&amp; isPetOwner) ? View.VISIBLE : View.GONE}"/>
+                                android:visibility="@{(details.bookingStatus.equalsIgnoreCase(`accepted`) &amp;&amp; details.paymentStatus.equalsIgnoreCase(`noaction`) &amp;&amp; isPetOwner) ? View.VISIBLE : View.GONE}"/>
                             <TextView
                                 android:id="@+id/track_btn"
                                 android:layout_width="wrap_content"
@@ -165,7 +165,7 @@
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="@{@string/label_booking_amount(details.totalAmount)}"
+                        android:text="@{@string/label_booking_amount(String.format(`%.2f`, details.totalAmount))}"
                         android:layout_alignParentEnd="true"
                         android:gravity="end"
                         android:layout_weight="0.1"/>

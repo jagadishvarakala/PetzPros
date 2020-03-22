@@ -26,5 +26,7 @@ public interface CareTackerMvpView extends MvpView {
 
     void onClickBookBtn(CareTackersModel movie);
 
+    void noDataFound(String message);
+
 
 }

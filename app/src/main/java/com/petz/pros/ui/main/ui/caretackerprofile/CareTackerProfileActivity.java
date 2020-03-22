@@ -37,8 +37,10 @@ public class CareTackerProfileActivity extends BaseActivity implements CareTacke
 
     private RegistrationRequest registrationRequest;
 
-    public static Intent getIntent(Context context){
-        return new Intent(context,CareTackerProfileActivity.class);
+    public static Intent getIntent(Context context , boolean isChecked){
+        Intent intent = new Intent(context,CareTackerProfileActivity.class);
+        intent.putExtra("isAvailabulity", isChecked);
+        return intent;
     }
 
     @Override
@@ -59,6 +61,12 @@ public class CareTackerProfileActivity extends BaseActivity implements CareTacke
     @Override
     public void onSuccessProfileUpdate(RegistrationRequest body) {
         showMessage("Profile updated successfully");
+        finish();
+    }
+
+    @Override
+    public boolean getAvailabulity() {
+      return   getIntent().getBooleanExtra("isAvailabulity",false);
     }
 
     public boolean toValidatePetDetails() {
@@ -103,6 +111,7 @@ public class CareTackerProfileActivity extends BaseActivity implements CareTacke
             return isValid;
         }
 
+        registrationRequest.setIsWalkerAvailable(getAvailabulity());
         registrationRequest.setFirstName(profileBinding.edtName.getText().toString());
         registrationRequest.setLastName(profileBinding.edtLastName.getText().toString());
         registrationRequest.setEmailId(profileBinding.edtEmail.getText().toString());
@@ -209,6 +218,7 @@ public class CareTackerProfileActivity extends BaseActivity implements CareTacke
     protected void setUp() {
         if(getSupportActionBar() != null)
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
         profileBinding.setProfile(profileMvpPresenter.getProfileDetails());
 

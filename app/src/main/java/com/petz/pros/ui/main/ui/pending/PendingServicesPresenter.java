@@ -79,7 +79,7 @@ public class PendingServicesPresenter<V extends PendingServicesMvpView> extends 
             getMvpView().showLoading();
             //Creating an object of our api interface
             ApiInterface api = ApiClient.getApiService();
-
+            bookingsModule.setName(getDataManager().getUserName());
             Call<ResponseBody> call = api.updateBookingStatus(bookingsModule);
 
             call.enqueue(new Callback<ResponseBody>() {

@@ -14,7 +14,16 @@ public class BookingModel implements Serializable {
     private String serviceStartTime;
     private String serviceEndTime;
     private String serviceTotalTime;
-    private String serviceTotalAmount;
+    private double serviceTotalAmount;
+    private String serviceDuration;
+
+    public String getServiceDuration() {
+        return serviceDuration;
+    }
+
+    public void setServiceDuration(String serviceDuration) {
+        this.serviceDuration = serviceDuration;
+    }
 
     @SerializedName("OwnerId")
     private int ownerId;
@@ -102,11 +111,11 @@ public class BookingModel implements Serializable {
         this.serviceTotalTime = serviceTotalTime;
     }
 
-    public String getServiceTotalAmount() {
+    public double getServiceTotalAmount() {
         return serviceTotalAmount;
     }
 
-    public void setServiceTotalAmount(String serviceTotalAmount) {
+    public void setServiceTotalAmount(double serviceTotalAmount) {
         this.serviceTotalAmount = serviceTotalAmount;
     }
 

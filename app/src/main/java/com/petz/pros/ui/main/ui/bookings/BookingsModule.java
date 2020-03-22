@@ -48,6 +48,10 @@ public class BookingsModule implements Serializable {
     @SerializedName("isServiceEnd")
     private boolean isServiceEnd;
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public String getActualStartTime() {
         return CommonUtils.convertTime(ActualStartTime);
     }
