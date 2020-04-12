@@ -130,7 +130,7 @@
                                 android:background="@color/color_light_yellow"
                                 android:layout_margin="@dimen/_10dp"
                                 android:padding="@dimen/_10dp"
-                                android:visibility="@{(details.bookingStatus.equalsIgnoreCase(`accepted`) &amp;&amp; details.paymentStatus.equalsIgnoreCase(`accepted`) &amp;&amp; !isPetOwner &amp;&amp; details.serviceName.equalsIgnoreCase(`Dog Walking`)) ? View.VISIBLE : View.GONE}"/>
+                                android:visibility="@{(details.bookingStatus.equalsIgnoreCase(`accepted`) &amp;&amp; details.paymentStatus.equalsIgnoreCase(`accepted`) &amp;&amp; !isPetOwner &amp;&amp; details.serviceName.equalsIgnoreCase(`Dog Walking`) &amp;&amp; !details.serviceStart) ? View.VISIBLE : View.GONE}"/>
                         </LinearLayout>
                     </LinearLayout>
 
@@ -172,6 +172,38 @@
 
                     </LinearLayout>
 
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_horizontal"
+                        android:padding="@dimen/_10dp"
+                        android:visibility="@{details.serviceStart &amp;&amp;  !details.serviceEnd &amp;&amp; !isPetOwner ? View.VISIBLE : View.GONE}">
+                        <Button
+                            android:id="@+id/end_service_btn"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:text="End Service"
+                            android:background="@color/colorPrimaryDarker"
+                            android:textSize="@dimen/sp14"
+                            android:textColor="@color/white"
+                            android:layout_weight="0.5"
+                            style="?android:buttonBarNegativeButtonStyle"
+                            android:layout_marginStart="@dimen/_10dp"
+                            android:layout_marginEnd="@dimen/_10dp"/>
+                        <Button
+                            android:id="@+id/resume_service_btn"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:text="Resume Service"
+                            android:background="@color/colorAccent"
+                            android:textSize="@dimen/sp14"
+                            android:textColor="@color/white"
+                            android:layout_weight="0.5"
+                            style="?android:buttonBarPositiveButtonStyle"
+                            android:layout_marginStart="@dimen/_10dp"
+                            android:layout_marginEnd="@dimen/_10dp"/>
+                    </LinearLayout>
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>

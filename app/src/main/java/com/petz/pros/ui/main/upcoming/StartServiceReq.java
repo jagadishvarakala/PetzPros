@@ -14,6 +14,12 @@ public class StartServiceReq {
     private String actualStartTime;
     @SerializedName("ActualEndTime")
     private String actualEndTime;
+    @SerializedName("isServiceStart")
+    private boolean isServiceStart;
+
+    public void setServiceStart(boolean serviceStart) {
+        isServiceStart = serviceStart;
+    }
 
     public void setId(int id) {
         this.id = id;

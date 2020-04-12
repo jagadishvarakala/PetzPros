@@ -1,5 +1,9 @@
 package com.petz.pros.ui.main.upcoming;
 
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+
 import com.petz.pros.data.DataManager;
 import com.petz.pros.data.network.ApiClient;
 import com.petz.pros.data.network.ApiInterface;
@@ -8,6 +12,7 @@ import com.petz.pros.ui.main.ui.bookings.BookingsModule;
 import com.petz.pros.ui.main.ui.pending.PendingServicesMvpPresenter;
 import com.petz.pros.ui.main.ui.pending.PendingServicesMvpView;
 import com.petz.pros.utils.CommonUtils;
+import com.petz.pros.utils.NetworkUtils;
 import com.petz.pros.utils.rx.SchedulerProvider;
 
 import java.io.IOException;
@@ -89,6 +94,7 @@ public class UpcomingServicesPresenter<V extends UpcomingServicesMvpView> extend
             startServiceReq.setId(bookingsModule.getId());
             startServiceReq.setBookingStatus("accepted");
             startServiceReq.setPaymentStatus("accepted");
+            startServiceReq.setServiceStart(true);
             startServiceReq.setActualStartTime(CommonUtils.getCurrentDateTime());
 
             Call<ResponseBody> call = api.START_SERVICE_REQ_CALL(startServiceReq );
@@ -123,6 +129,51 @@ public class UpcomingServicesPresenter<V extends UpcomingServicesMvpView> extend
         } else {
             getMvpView().onError("Internet Connection Not Available");
 
+        }
+    }
+
+    @Override
+    public void endService(BookingsModule bookingsModule) {
+        if ( getMvpView().isNetworkConnected()) {
+            getMvpView().showLoading();
+            //Creating an object of our api interface
+            ApiInterface api = ApiClient.getApiService();
+            StartServiceReq updateGeoReq = new StartServiceReq();
+            updateGeoReq.setId(bookingsModule.getId());
+            updateGeoReq.setBookingStatus("accepted");
+            updateGeoReq.setPaymentStatus("accepted");
+            updateGeoReq.setServiceStart(true);
+            updateGeoReq.setActualEndTime(CommonUtils.getCurrentDateTime());
+
+            Call<ResponseBody> call = api.END_SERVICE_REQ_CALL(updateGeoReq);
+
+            call.enqueue(new Callback<ResponseBody>() {
+                @Override
+                public void onResponse(@NonNull Call<ResponseBody> call, @NonNull Response<ResponseBody> response) {
+
+                    if (response.code() == 200) {
+                        if (response.isSuccessful()) {
+                            getMvpView().hideLoading();
+                            //Dismiss Dialog
+                            if(response.body() != null) {
+                                getMvpView().onSuccessEndService();
+                            }
+                        }
+                    }else if(response.code() == 404){
+                        getMvpView().hideLoading();
+                        getMvpView().showMessage(response.toString());
+                    }
+
+                }
+
+                @Override
+                public void onFailure(Call<ResponseBody> call, Throwable t) {
+                    //Dismiss Dialog
+
+                }
+            });
+        } else {
+            getMvpView().showMessage("Internet Connection Not Available");
         }
     }
 }

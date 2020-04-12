@@ -47,7 +47,11 @@ public class UpcomingServicesActivity extends BaseActivity implements UpcomingSe
         setUp();
     }
 
-
+    @Override
+    protected void onResume() {
+        super.onResume();
+        bookingMvpPresenter.getBookingsDetails();
+    }
 
     @Override
     public void showNoDataFound(String message) {
@@ -81,6 +85,16 @@ public class UpcomingServicesActivity extends BaseActivity implements UpcomingSe
     }
 
     @Override
+    public void onClickServiceStart(BookingsModule bookingsModule) {
+        bookingMvpPresenter.startService(bookingsModule);
+    }
+
+    @Override
+    public void onClickEndService(BookingsModule bookingsModule) {
+        bookingMvpPresenter.endService(bookingsModule);
+    }
+
+    @Override
     public void updateBookings(ArrayList<ArrayList<BookingsModule>> arrayLists) {
         if (arrayLists.get(1).size() > 0)
             bookingsAdapter.setEmployeeList(arrayLists.get(1));
@@ -93,6 +107,11 @@ public class UpcomingServicesActivity extends BaseActivity implements UpcomingSe
         Bundle bundle = new Bundle();
         bundle.putSerializable("tracking_info",bookingsModule);
         startActivity(new Intent(getApplicationContext(), UpdatingLocationActivity.class).putExtras(bundle));
+    }
+
+    @Override
+    public void onSuccessEndService() {
+        bookingMvpPresenter.getBookingsDetails();
     }
 
     @Override
@@ -109,7 +128,7 @@ public class UpcomingServicesActivity extends BaseActivity implements UpcomingSe
         bookingsAdapter.setClickListener(bookingsMvpView);
         recyclerView.setAdapter(bookingsAdapter);
 
-        bookingMvpPresenter.getBookingsDetails();
+      //  bookingMvpPresenter.getBookingsDetails();
     }
 
     @Override

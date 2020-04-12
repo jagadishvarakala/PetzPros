@@ -101,6 +101,7 @@ public class BookingsFragment extends BaseFragment implements BookingsMvpView {
         bookingDetails.setPaymentStatus(module.isPaymentStatus());
         bookingDetails.setPhone(module.getPhone());
         bookingDetails.setServiceName(module.getServiceName());
+        bookingDetails.setServiceRefTypeId(module.getServiceRefTypeId());
         bookingDetails.setTotalAmount(module.getTotalAmount());
         bookingDetails.setCareTaker(module.getCareTacker());
         bookingDetails.setAppointmentDate(module.getAppointmentDate());
@@ -134,6 +135,16 @@ public class BookingsFragment extends BaseFragment implements BookingsMvpView {
         startActivity(new Intent(getBaseActivity(), ConfirmationActivity.class)
                                 .putExtra("PaymentDetails", paymentDetail)
                                 .putExtra("PaymentAmount", paymentAmount));
+    }
+
+    @Override
+    public void onClickServiceStart(BookingsModule bookingsModule) {
+
+    }
+
+    @Override
+    public void onClickEndService(BookingsModule bookingsModule) {
+
     }
 
     //Paypal intent request code to track onActivityResult method

@@ -15,6 +15,8 @@ public class BookingsModule implements Serializable {
     private int ownerId;
     @SerializedName("CareTakerID")
     private int careTakerID;
+    @SerializedName("ServiceRefTypeId")
+    private int serviceRefTypeId;
     @SerializedName("Name")
     private String name;
     @SerializedName("Phone")
@@ -47,6 +49,10 @@ public class BookingsModule implements Serializable {
     private boolean isServiceStart;
     @SerializedName("isServiceEnd")
     private boolean isServiceEnd;
+
+    public int getServiceRefTypeId() {
+        return serviceRefTypeId;
+    }
 
     public void setName(String name) {
         this.name = name;

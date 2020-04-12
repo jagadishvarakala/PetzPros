@@ -38,6 +38,7 @@ import com.google.android.gms.maps.model.PolylineOptions;
 import com.petz.pros.R;
 import com.petz.pros.data.network.ApiClient;
 import com.petz.pros.data.network.ApiInterface;
+import com.petz.pros.ui.base.BaseActivity;
 import com.petz.pros.ui.main.ui.bookings.BookingsModule;
 import com.petz.pros.ui.main.upcoming.StartServiceReq;
 import com.petz.pros.utils.CommonUtils;
@@ -54,7 +55,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public class UpdatingLocationActivity extends AppCompatActivity implements OnMapReadyCallback {
+public class UpdatingLocationActivity extends BaseActivity implements OnMapReadyCallback {
 
     private static final int MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 5445;
 
@@ -86,6 +87,7 @@ public class UpdatingLocationActivity extends AppCompatActivity implements OnMap
     };
 
     private BookingsModule bookingsModule;
+    private Timer _Request_Trip_Timer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -97,7 +99,7 @@ public class UpdatingLocationActivity extends AppCompatActivity implements OnMap
 
         bookingsModule = (BookingsModule) getIntent().getSerializableExtra("tracking_info");
 
-        Timer _Request_Trip_Timer = new Timer();
+         _Request_Trip_Timer = new Timer();
         _Request_Trip_Timer.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
@@ -111,12 +113,17 @@ public class UpdatingLocationActivity extends AppCompatActivity implements OnMap
         endBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                endServiceCall();
+                aleartDialog();
             }
         });
 
         if(getSupportActionBar() != null)
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+
+    @Override
+    protected void setUp() {
+
     }
 
     @Override
@@ -288,13 +295,14 @@ public class UpdatingLocationActivity extends AppCompatActivity implements OnMap
 
     private void endServiceCall(){
         if ( NetworkUtils.isNetworkConnected(getApplicationContext())) {
-
+            showLoading();
             //Creating an object of our api interface
             ApiInterface api = ApiClient.getApiService();
             StartServiceReq updateGeoReq = new StartServiceReq();
             updateGeoReq.setId(bookingsModule.getId());
             updateGeoReq.setBookingStatus("accepted");
             updateGeoReq.setPaymentStatus("accepted");
+            updateGeoReq.setServiceStart(true);
             updateGeoReq.setActualEndTime(CommonUtils.getCurrentDateTime());
 
             Call<ResponseBody> call = api.END_SERVICE_REQ_CALL(updateGeoReq);
@@ -305,14 +313,18 @@ public class UpdatingLocationActivity extends AppCompatActivity implements OnMap
 
                     if (response.code() == 200) {
                         if (response.isSuccessful()) {
+                            hideLoading();
                             //Dismiss Dialog
                             if(response.body() != null) {
+                                if(_Request_Trip_Timer !=null)
+                                    _Request_Trip_Timer.cancel();
 
                                 finish();
                             }
                         }
                     }else if(response.code() == 404){
-
+                        hideLoading();
+                        showMessage(response.toString());
                     }
 
                 }

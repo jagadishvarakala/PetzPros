@@ -12,4 +12,6 @@ public interface UpcomingServicesMvpView extends MvpView {
     void updateBookings(ArrayList<ArrayList<BookingsModule>> arrayLists);
 
     void onSuccessStartService(BookingsModule bookingsModule);
+
+    void onSuccessEndService();
 }

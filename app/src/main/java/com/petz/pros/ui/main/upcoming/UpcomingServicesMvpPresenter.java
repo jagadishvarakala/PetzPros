@@ -11,4 +11,6 @@ public interface UpcomingServicesMvpPresenter<V extends UpcomingServicesMvpView>
     boolean isPetOwner();
 
     void startService(BookingsModule bookingsModule);
+
+    void endService(BookingsModule bookingsModule);
 }

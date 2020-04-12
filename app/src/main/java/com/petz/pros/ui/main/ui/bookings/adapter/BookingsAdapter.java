@@ -62,6 +62,26 @@ public class BookingsAdapter
         }
       }
     });
+
+    employeeViewHolder.employeeListItemBinding.resumeServiceBtn.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View view) {
+        if(bookingsMvpView != null){
+          bookingsMvpView.onClickServiceStart(currentStudent);
+        }
+      }
+    });
+
+    employeeViewHolder.employeeListItemBinding.endServiceBtn.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View view) {
+        if(bookingsMvpView != null){
+          bookingsMvpView.onClickEndService(currentStudent);
+        }
+      }
+    });
+
+
   }
  
   @Override

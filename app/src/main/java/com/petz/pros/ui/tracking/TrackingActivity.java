@@ -187,8 +187,10 @@ public class TrackingActivity extends AppCompatActivity implements OnMapReadyCal
         else
             MarkerAnimation.animateMarkerToGB(currentLocationMarker, latLng, new LatLngInterpolator.Spherical());
         lineOptions.add(latLng);
-        googleMap.addPolyline(lineOptions);
-        googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(getCameraPositionWithBearing(latLng)));
+        if(googleMap != null) {
+            googleMap.addPolyline(lineOptions);
+            googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(getCameraPositionWithBearing(latLng)));
+        }
 //        LatLng lastLatLong = currentLocationMarker.getPosition();
 //        Location locationA = new Location("Point A");
 //        locationA.setLatitude(startLatLong.latitude);

@@ -19,4 +19,8 @@ public interface BookingsMvpView extends MvpView {
     void onClickStartService(BookingsModule bookingsModule);
 
     void paymentDetailsUpdated(ResponseBody responseBody);
+
+    void onClickServiceStart(BookingsModule bookingsModule);
+
+    void onClickEndService(BookingsModule bookingsModule);
 }
